@@ -1,0 +1,192 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:account_name",
+ "creation": "2023-09-20 22:14:41.713814",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "account_name",
+  "location_of_property",
+  "type_of_loan",
+  "bank_name",
+  "value_of_loan",
+  "value_of_property",
+  "commission",
+  "commission_calculated",
+  "column_break_xkmoo",
+  "commission_receive",
+  "commission_due",
+  "status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_name",
+   "fieldtype": "Data",
+   "label": "Account Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "location_of_property",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Location of Property"
+  },
+  {
+   "fieldname": "type_of_loan",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "label": "Type of Loan",
+   "options": "Mortgage\nUnsecured"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Bank Name",
+   "options": "Bank name"
+  },
+  {
+   "fieldname": "value_of_loan",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Value of Loan"
+  },
+  {
+   "fieldname": "value_of_property",
+   "fieldtype": "Float",
+   "label": "Value of Property"
+  },
+  {
+   "fieldname": "commission",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Commission"
+  },
+  {
+   "fieldname": "commission_calculated",
+   "fieldtype": "Float",
+   "label": "Commission Calculated",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xkmoo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "commission_receive",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Commission Receive"
+  },
+  {
+   "fieldname": "commission_due",
+   "fieldtype": "Float",
+   "label": "Commission Due",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Draft\nAssessment\nLogin\nBank Login Query\nLogin done\nCredit query\nFile Sanction\nProperty Assessment\nValuation of property\nTechnical Evaluation\nDisbursement\nClosed\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Crm",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-09-20 23:36:10.796047",
+ "modified_by": "Administrator",
+ "module": "custom_crm",
+ "name": "Crm",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Draft"
+  },
+  {
+   "color": "Blue",
+   "title": "Assessment"
+  },
+  {
+   "color": "Blue",
+   "title": "Login"
+  },
+  {
+   "color": "Blue",
+   "title": "Bank Login Query"
+  },
+  {
+   "color": "Blue",
+   "title": "Login done"
+  },
+  {
+   "color": "Blue",
+   "title": "Credit query"
+  },
+  {
+   "color": "Blue",
+   "title": "File Sanction"
+  },
+  {
+   "color": "Blue",
+   "title": "Property Assessment"
+  },
+  {
+   "color": "Blue",
+   "title": "Valuation of property"
+  },
+  {
+   "color": "Blue",
+   "title": "Technical Evaluation"
+  },
+  {
+   "color": "Blue",
+   "title": "Disbursement"
+  },
+  {
+   "color": "Green",
+   "title": "Closed"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  }
+ ],
+ "track_changes": 1
+}
