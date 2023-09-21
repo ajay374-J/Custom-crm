@@ -13,7 +13,7 @@ frappe.ui.form.on('Custom Crm', {
 					callback: function(r){
 						me.frm.reload_doc();
 
-						frappe.msgprint("Draft Status Set")
+						frappe.msgprint("Status Changed Successfully")
 						// frm.save("Update")
 						
 					},
@@ -36,7 +36,7 @@ frappe.ui.form.on('Custom Crm', {
 				callback: function(r){
 					me.frm.reload_doc();
 
-					frappe.msgprint("Assessment Status Set")
+					frappe.msgprint("Status Changed Successfully")
 
 					// frm.save("Update")
 				},
@@ -57,7 +57,7 @@ frappe.ui.form.on('Custom Crm', {
 				callback: function(r){
 					me.frm.reload_doc();
 
-					frappe.msgprint("Login Status Set")
+					frappe.msgprint("Status Changed Successfully")
 					// frm.save("Update")
 				},
 				always: function() {
@@ -75,7 +75,7 @@ frappe.ui.form.on('Custom Crm', {
 				callback: function(r){
 					me.frm.reload_doc();
 
-					frappe.msgprint("Bank Login Query Status Set")
+					frappe.msgprint("Status Changed Successfully")
 					// frm.save("Update")
 				},
 				always: function() {
@@ -94,7 +94,7 @@ frappe.ui.form.on('Custom Crm', {
 				callback: function(r){
 					me.frm.reload_doc();
 
-					frappe.msgprint("Login done Status Set")
+					frappe.msgprint("Status Changed Successfully")
 					// frm.save("Update")
 				},
 				always: function() {
@@ -113,7 +113,7 @@ frappe.ui.form.on('Custom Crm', {
 				callback: function(r){
 					me.frm.reload_doc();
 
-					frappe.msgprint("Credit query Status Set")
+					frappe.msgprint("Status Changed Successfully")
 
 					// frm.save("Update")
 				},
@@ -132,7 +132,7 @@ frappe.ui.form.on('Custom Crm', {
 				callback: function(r){
 					me.frm.reload_doc();
 
-					frappe.msgprint("File Sanction Status Set")
+					frappe.msgprint("Status Changed Successfully")
 					// frm.save("Update")
 				},
 				always: function() {
@@ -151,7 +151,7 @@ frappe.ui.form.on('Custom Crm', {
 				callback: function(r){
 					me.frm.reload_doc();
 
-					frappe.msgprint("Property Assessment Status Set")
+					frappe.msgprint("Status Changed Successfully")
 				},
 				always: function() {
 					frappe.ui.form.is_saving = false;
@@ -170,7 +170,7 @@ frappe.ui.form.on('Custom Crm', {
 				callback: function(r){
 					me.frm.reload_doc();
 
-					frappe.msgprint("Valuation of property Status Set")
+					frappe.msgprint("Status Changed Successfully")
 				},
 				always: function() {
 					frappe.ui.form.is_saving = false;
@@ -188,7 +188,7 @@ frappe.ui.form.on('Custom Crm', {
 				callback: function(r){
 					me.frm.reload_doc();
 
-					frappe.msgprint("Disbursement Status Set")
+					frappe.msgprint("Status Changed Successfully")
 					// frm.save("Update")
 				},
 				always: function() {
@@ -206,7 +206,7 @@ frappe.ui.form.on('Custom Crm', {
 				callback: function(r){
 					me.frm.reload_doc();
 
-					frappe.msgprint("Disbursement Status Set")
+					frappe.msgprint("Status Changed Successfully")
 					// frm.save("Update")
 				},
 				always: function() {
@@ -225,7 +225,7 @@ frappe.ui.form.on('Custom Crm', {
 				callback: function(r){
 					me.frm.reload_doc();
 
-					frappe.msgprint("Closed Status Set")
+					frappe.msgprint("Status Changed Successfully")
 					// frm.save("Update")
 				},
 				always: function() {
