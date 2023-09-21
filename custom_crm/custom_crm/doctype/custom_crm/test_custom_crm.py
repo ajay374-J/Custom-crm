@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestCrm(FrappeTestCase):
+class TestCustomCrm(FrappeTestCase):
 	pass

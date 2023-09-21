@@ -4,7 +4,7 @@
 import frappe
 from frappe.model.document import Document
 
-class Crm(Document):
+class CustomCrm(Document):
 	def get_feed(self):
 		return "{0}".format(frappe._(self.status))
 

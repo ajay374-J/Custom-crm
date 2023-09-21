@@ -115,7 +115,7 @@
  "modified": "2023-09-20 23:36:10.796047",
  "modified_by": "Administrator",
  "module": "custom_crm",
- "name": "Crm",
+ "name": "Custom Crm",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

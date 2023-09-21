@@ -1,7 +1,7 @@
 // Copyright (c) 2023, Frappe Technologies Pvt. Ltd. and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Crm', {
+frappe.ui.form.on('Custom Crm', {
 	refresh: function(frm) {
 		if(frm.doc.status!="Draft"){
 		frm.add_custom_button(__('Draft'), function() {
