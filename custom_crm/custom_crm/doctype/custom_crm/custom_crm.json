@@ -21,6 +21,7 @@
   "commission_due",
   "state",
   "status",
+  "status_history",
   "amended_from"
  ],
  "fields": [
@@ -113,15 +114,23 @@
    "allow_on_submit": 1,
    "fieldname": "state",
    "fieldtype": "Table",
+   "hidden": 1,
    "label": "State",
    "options": "Status",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status_history",
+   "fieldtype": "Small Text",
+   "label": "Status History",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-24 11:15:43.526871",
+ "modified": "2023-09-24 13:34:08.033812",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",

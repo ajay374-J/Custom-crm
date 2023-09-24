@@ -36,6 +36,14 @@ class CustomCrm(Document):
 		for k in self.state:
 			if k.state==status:
 				k.db_set("check",1)
+		statu=""
+		for k in self.state:
+			if k.check==1:
+				statu+="<b style='color:MediumSeaGreen;'>"+str(k.state)+"</b>\n"
+			else:
+				statu+=str(k.state)+"\n"
+
+		self.db_set("status_history",statu)
 	@frappe.whitelist()
 	def update_prev_status(self,status):
 		self.db_set("status", status,update_modified=True)
@@ -47,6 +55,16 @@ class CustomCrm(Document):
 				print(i,status,k.state)
 			if i<k.idx:
 				k.db_set("check",0)
+
+		statu=""
+		for k in self.state:
+			if k.check==1:
+				statu+="<b style='color:MediumSeaGreen;'>"+str(k.state)+"</b>\n"
+			else:
+				statu+=str(k.state)+"\n"
+
+		self.db_set("status_history",statu)
+
 
 
 
