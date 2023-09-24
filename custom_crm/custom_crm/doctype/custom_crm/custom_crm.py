@@ -36,13 +36,15 @@ class CustomCrm(Document):
 		for k in self.state:
 			if k.state==status:
 				k.db_set("check",1)
-		statu=""
+		statu="<table  width=100%>"
+
 		for k in self.state:
 			if k.check==1:
-				statu+="<b style='color:MediumSeaGreen;'>"+str(k.state)+"</b>\n"
-			else:
-				statu+=str(k.state)+"\n"
 
+				statu+="<tr style='border-style: solid;border-color: black;'><td style='border:1px black;background-color:MediumSeaGreen;'>"+str(k.state)+"</td></tr>"
+			else:
+				statu+="<tr style='border-style: solid;border-color: black;'><td style='border:1px black;'>"+str(k.state)+"</td></tr>"
+		statu+="</table>"
 		self.db_set("status_history",statu)
 	@frappe.whitelist()
 	def update_prev_status(self,status):
@@ -56,13 +58,15 @@ class CustomCrm(Document):
 			if i<k.idx:
 				k.db_set("check",0)
 
-		statu=""
+		statu="<table width=100%>"
+
 		for k in self.state:
 			if k.check==1:
-				statu+="<b style='color:MediumSeaGreen;'>"+str(k.state)+"</b>\n"
-			else:
-				statu+=str(k.state)+"\n"
 
+				statu+="<tr style='border-style: solid;border-color: black;'><td style='border:1px black;background-color:MediumSeaGreen;'>"+str(k.state)+"</td></tr>"
+			else:
+				statu+="<tr style='border-style: solid;border-color: black;'><td style='border:1px black;'>"+str(k.state)+"</td></tr>"
+		statu+="</table>"
 		self.db_set("status_history",statu)
 
 
