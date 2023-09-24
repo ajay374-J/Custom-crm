@@ -12,7 +12,7 @@ class CustomCrm(Document):
 		self.calculate_commission()
 		self.calculate_commission_due()
 
-	def on_update(self):
+	def before_save(self):
 		self.calculate_commission()
 		self.calculate_commission_due()
 		
@@ -22,7 +22,6 @@ class CustomCrm(Document):
 		commission_calculated = value_of_loan * commission / 100
 		self.commission_calculated = commission_calculated
 		print(f"Commission Calculated: {commission_calculated}")
-		# frappe.msgprint(f"Commission Calculated: {commission_calculated}")
 
 	def calculate_commission_due(self):
 		commission_calculated = self.commission_calculated or 0
@@ -34,6 +33,94 @@ class CustomCrm(Document):
 	@frappe.whitelist()
 	def update_status(self,status):
 		self.db_set("status", status,update_modified=True)
+		for k in self.state:
+			if k.state==status:
+				k.db_set("check",1)
+	@frappe.whitelist()
+	def update_prev_status(self,status):
+		self.db_set("status", status,update_modified=True)
+		i=10000
+		for k in self.state:
+			if k.state==status:
+				k.db_set("check",1)
+				i=k.idx
+				print(i,status,k.state)
+			if i<k.idx:
+				k.db_set("check",0)
 
-	def on_cancel(self):
-		self.db_set("status", "Cancelled",update_modified=True)
+
+
+	def on_submit(self):
+		for k in self.state:
+			if k.state==self.status:
+				k.db_set("check",1)
+
+
+
+	@frappe.whitelist()
+	def stages(self):
+		self.state=[]
+		self.append("state",{
+			"state":"File Discussion",
+
+		})
+		self.append("state",{
+			"state":"Documents Received",
+
+		})
+		self.append("state",{
+			"state":"Our Queries Given",
+
+		})
+		self.append("state",{
+			"state":"Queries Received",
+
+		})
+		self.append("state",{
+			"state":"Assessment",
+
+		})
+		self.append("state",{
+			"state":"Login",
+
+		})
+		self.append("state",{
+			"state":"Bank Login Queries",
+
+		})
+		self.append("state",{
+			"state":"Login Completion",
+
+		})
+		self.append("state",{
+			"state":"Credit Queries",
+
+		})
+		self.append("state",{
+			"state":"Sanction",
+
+		})
+		self.append("state",{
+			"state":"Technical Assessment",
+
+		})
+		self.append("state",{
+			"state":"Legal Assessment",
+
+		})
+		self.append("state",{
+			"state":"Ops",
+
+		})
+		self.append("state",{
+			"state":"Docket",
+
+		})
+		self.append("state",{
+			"state":"Disbursement",
+
+		})
+		self.append("state",{
+			"state":"Cheques Handover",
+
+		})

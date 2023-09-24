@@ -19,6 +19,7 @@
   "column_break_xkmoo",
   "commission_receive",
   "commission_due",
+  "state",
   "status",
   "amended_from"
  ],
@@ -96,7 +97,7 @@
    "in_standard_filter": 1,
    "label": "Status",
    "no_copy": 1,
-   "options": "Draft\nAssessment\nLogin\nBank Login Query\nLogin done\nCredit query\nFile Sanction\nProperty Assessment\nValuation of property\nTechnical Evaluation\nDisbursement\nClosed\nCancelled",
+   "options": "File Discussion\nDocuments Received\nOur Queries Given\nQueries Received\nAssessment\nLogin\nBank Login Queries\nLogin Completion\nCredit Queries\nSanction\nTechnical Assessment\nLegel Assessment\nOps\nDocket\nDisbursement\nCheques Handover",
    "read_only": 1
   },
   {
@@ -104,15 +105,23 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Crm",
+   "options": "Custom Crm",
    "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "state",
+   "fieldtype": "Table",
+   "label": "State",
+   "options": "Status",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-20 23:36:10.796047",
+ "modified": "2023-09-24 11:15:43.526871",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",
@@ -137,7 +146,19 @@
  "states": [
   {
    "color": "Orange",
-   "title": "Draft"
+   "title": "File Discussion"
+  },
+  {
+   "color": "Blue",
+   "title": "Documents Received"
+  },
+  {
+   "color": "Blue",
+   "title": "Our Queries Given"
+  },
+  {
+   "color": "Blue",
+   "title": "Queries Received"
   },
   {
    "color": "Blue",
@@ -149,31 +170,35 @@
   },
   {
    "color": "Blue",
-   "title": "Bank Login Query"
+   "title": "Bank Login Queries"
   },
   {
    "color": "Blue",
-   "title": "Login done"
+   "title": "Login Completion"
   },
   {
    "color": "Blue",
-   "title": "Credit query"
+   "title": "Credit Queries"
   },
   {
    "color": "Blue",
-   "title": "File Sanction"
+   "title": "Sanction"
   },
   {
    "color": "Blue",
-   "title": "Property Assessment"
+   "title": "Technical Assessment"
   },
   {
    "color": "Blue",
-   "title": "Valuation of property"
+   "title": "Legel Assessment"
   },
   {
    "color": "Blue",
-   "title": "Technical Evaluation"
+   "title": "Ops"
+  },
+  {
+   "color": "Blue",
+   "title": "Docket"
   },
   {
    "color": "Blue",
@@ -181,11 +206,7 @@
   },
   {
    "color": "Green",
-   "title": "Closed"
-  },
-  {
-   "color": "Red",
-   "title": "Cancelled"
+   "title": "Cheques Handover"
   }
  ],
  "track_changes": 1
