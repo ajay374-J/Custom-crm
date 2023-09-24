@@ -41,11 +41,12 @@ class CustomCrm(Document):
 		for k in self.state:
 			if k.check==1:
 
-				statu+="<tr style='border-style: solid;border-color: black;'><td style='border:1px black;background-color:MediumSeaGreen;'>"+str(k.state)+"</td></tr>"
+				statu+="<tr style='background-color: #4caf50; color: #ffffff; cursor: pointer;border-collapse: seperate;border-spacing:0 10px;border: 1px solid black;'><td style='padding: 10px; text-align: center; border-radius: 10px;'>"+str(k.state)+"</td></tr>"
 			else:
-				statu+="<tr style='border-style: solid;border-color: black;'><td style='border:1px black;'>"+str(k.state)+"</td></tr>"
+				statu+="<tr style='background-color: grey; color: white; cursor: pointer;border-collapse: seperate;border-spacing:0 10px;border: 1px solid black;'><td style='padding: 10px; text-align: center; border-radius: 10px;'>"+str(k.state)+"</td></tr>"
 		statu+="</table>"
 		self.db_set("status_history",statu)
+
 	@frappe.whitelist()
 	def update_prev_status(self,status):
 		self.db_set("status", status,update_modified=True)
@@ -63,9 +64,9 @@ class CustomCrm(Document):
 		for k in self.state:
 			if k.check==1:
 
-				statu+="<tr style='border-style: solid;border-color: black;'><td style='border:1px black;background-color:MediumSeaGreen;'>"+str(k.state)+"</td></tr>"
+				statu+="<tr style='background-color: #4caf50; color: #ffffff; cursor: pointer;border-collapse: seperate;border-spacing:0 10px;border: 1px solid black;'><td style='padding: 10px; text-align: center; border-radius: 10px;'>"+str(k.state)+"</td></tr>"
 			else:
-				statu+="<tr style='border-style: solid;border-color: black;'><td style='border:1px black;'>"+str(k.state)+"</td></tr>"
+				statu+="<tr style='background-color: grey; color: white; cursor: pointer;border-collapse: seperate;border-spacing:0 10px;border: 1px solid black;'><td style='padding: 10px; text-align: center; border-radius: 10px;'>"+str(k.state)+"</td></tr>"
 		statu+="</table>"
 		self.db_set("status_history",statu)
 
