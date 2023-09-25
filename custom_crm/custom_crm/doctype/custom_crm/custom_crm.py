@@ -10,6 +10,7 @@ class CustomCrm(Document):
 
 	def on_submit(self):
 		# self.calculate_commission()
+		self.get_company_value()
 		self.calculate_commission_due()
 
 	
@@ -21,7 +22,7 @@ class CustomCrm(Document):
 		
 
 	def get_company_value(self):
-		comp=frappe.db.get_value("User Company",{"name":frappe.session.user},["Company"])
+		comp=frappe.db.get_value("User Company",{"user":frappe.session.user},["Company"])
 		if comp:
 			self.company=comp
 			
