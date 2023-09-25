@@ -17,12 +17,17 @@ class CustomCrm(Document):
 		self.calculate_commission_due()
 		self.get_company_value()
 		self.calculate_vendor_commission_due()
+		self.validate_loan_value()
+
+
+
+	def validate_loan_value(self):
 		if self.value_of_loan <= 0:
 			frappe.throw("Value of loan must be a positive number")
-
+		if self.value_of_loan < self.commission:
+			frappe.throw("Value of loan must be greater than commission")
 
 	def on_update_after_submit(self):
-		# frappe.msgprint("on update")
 		self.calculate_commission_due()
 		self.calculate_vendor_commission_due()
 
@@ -36,11 +41,10 @@ class CustomCrm(Document):
 		commission_received = self.commission_receive or 0
 		commission = self.commission or 0
 		if commission > commission_received:
-			commission_due = commission - commission_received
+			self.commission_due = commission - commission_received
 		else:
-			commission_due = 0
-		self.commission_due = commission_due
-		print(f"Commission Due: {commission_due}")
+			frappe.throw("Commission should be greater than commission received")
+		print(f"Commission Due: {self.commission_due}")
 
 	def calculate_vendor_commission_due(self):
 		commission_already_given = self.commission_already_given or 0
