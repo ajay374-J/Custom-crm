@@ -11,6 +11,7 @@ class CustomCrm(Document):
 	def on_submit(self):
 		self.calculate_commission_due()
 		self.calculate_vendor_commission_due()
+		self.validate_loan_value()
 
 
 	def before_save(self):
@@ -30,6 +31,7 @@ class CustomCrm(Document):
 	def on_update_after_submit(self):
 		self.calculate_commission_due()
 		self.calculate_vendor_commission_due()
+		self.validate_loan_value()
 
 
 	def get_company_value(self):
