@@ -71,7 +71,7 @@ class CustomCrm(Document):
 				statu += "<tr style='background-color: grey; color: white; cursor: pointer;'><td style='padding: 6px; text-align: center; border-radius: 10px;'>" + str(
 					k.state) + "</td></tr>"
 		statu += "</table>"
-		self.db_set("status_history",statu)
+		self.db_set("status_history",statu,update_modified=True)
 
 	@frappe.whitelist()
 	def update_prev_status(self,status):
@@ -95,7 +95,7 @@ class CustomCrm(Document):
 				statu += "<tr style='background-color: grey; color: white; cursor: pointer;'><td style='padding: 6px; text-align: center; border-radius: 10px;'>" + str(
 					k.state) + "</td></tr>"
 		statu += "</table>"
-		self.db_set("status_history",statu)
+		self.db_set("status_history",statu,update_modified=True)
 
 
 
