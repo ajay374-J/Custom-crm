@@ -9,6 +9,7 @@ class CustomCrm(Document):
 		return "{0}".format(frappe._(self.status))
 
 	def on_submit(self):
+		frappe.msgprint("submitted")
 		self.calculate_commission_due()
 		self.calculate_vendor_commission_due()
 
@@ -18,9 +19,11 @@ class CustomCrm(Document):
 		self.get_company_value()
 		self.calculate_vendor_commission_due()
 
-	# def on_update(self):
-	# 	self.calculate_commission_due()
-	# 	self.calculate_vendor_commission_due()
+	def on_update_after_submit(self):
+		# frappe.msgprint("on update")
+		self.calculate_commission_due()
+		self.calculate_vendor_commission_due()
+
 
 	def get_company_value(self):
 		comp=frappe.db.get_value("User Company",{"user":frappe.session.user},["Company"])
