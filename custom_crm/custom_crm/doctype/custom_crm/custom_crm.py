@@ -12,9 +12,14 @@ class CustomCrm(Document):
 		self.calculate_commission()
 		self.calculate_commission_due()
 
+	def get_company(self):
+		comp=frappe.db.get_value("User Company",{"name":frappe.session.user},["Company"])
+		if comp:
+			self.company=comp
 	def before_save(self):
 		self.calculate_commission()
 		self.calculate_commission_due()
+		self.get_comapny()
 		
 	def calculate_commission(self):
 		value_of_loan = self.value_of_loan or 0

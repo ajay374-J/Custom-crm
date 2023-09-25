@@ -17,7 +17,9 @@ frappe.ui.form.on('Custom Crm', {
 		if(frm.doc.docstatus==1){
 		if(frm.doc.status!="File Discussion"){
 		frm.add_custom_button(__('Previous State'), function() {
-			let state=""
+			frappe.confirm('Are you sure you want to proceed to Next Stage?',
+				() => {
+					let state=""
 			if(frm.doc.status=="Documents Received"){
 				let state="File Discussion"
 				frappe.call({
@@ -303,13 +305,19 @@ frappe.ui.form.on('Custom Crm', {
 					}
 				});
 			}
+				}, () => {
+					// action to perform if No is selected
+				})
+			
 			
 					
 			});
 		}
 		if(frm.doc.status!="Cheques Handover"){
 		frm.add_custom_button(__('Next State'), function() {
-			let state=""
+			frappe.confirm('Are you sure you want to proceed to Next Stage?',
+			() => {
+				let state=""
 			if(frm.doc.status=="File Discussion"){
 				let state="Documents Received"
 				frappe.call({
@@ -595,6 +603,10 @@ frappe.ui.form.on('Custom Crm', {
 					}
 				});
 			}
+			}, () => {
+				// action to perform if No is selected
+			})
+			
 			
 				
 		});
