@@ -9,7 +9,6 @@ class CustomCrm(Document):
 		return "{0}".format(frappe._(self.status))
 
 	def on_submit(self):
-		frappe.msgprint("submitted")
 		self.calculate_commission_due()
 		self.calculate_vendor_commission_due()
 
