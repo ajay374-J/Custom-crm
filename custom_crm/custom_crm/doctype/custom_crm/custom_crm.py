@@ -9,13 +9,13 @@ class CustomCrm(Document):
 		return "{0}".format(frappe._(self.status))
 
 	def on_submit(self):
-		self.calculate_commission()
+		# self.calculate_commission()
 		self.calculate_commission_due()
 
 	
 
 	def before_save(self):
-		self.calculate_commission()
+		# self.calculate_commission()
 		self.calculate_commission_due()
 		self.get_company_value()
 		
@@ -25,17 +25,20 @@ class CustomCrm(Document):
 		if comp:
 			self.company=comp
 			
-	def calculate_commission(self):
-		value_of_loan = self.value_of_loan or 0
-		commission = self.commission or 0
-		commission_calculated = value_of_loan * commission / 100
-		self.commission_calculated = commission_calculated
-		print(f"Commission Calculated: {commission_calculated}")
+	# def calculate_commission(self):
+	# 	value_of_loan = self.value_of_loan or 0
+	# 	commission = self.commission or 0
+	# 	commission_calculated = value_of_loan * commission / 100
+	# 	self.commission_calculated = commission_calculated
+	# 	print(f"Commission Calculated: {commission_calculated}")
 
 	def calculate_commission_due(self):
-		commission_calculated = self.commission_calculated or 0
 		commission_received = self.commission_receive or 0
-		commission_due = commission_calculated - commission_received
+		commission = self.commission or 0
+		if commission > commission_received:
+			commission_due = commission - commission_received
+		else:
+			commission_due = 0
 		self.commission_due = commission_due
 		print(f"Commission Due: {commission_due}")
 
@@ -45,15 +48,16 @@ class CustomCrm(Document):
 		for k in self.state:
 			if k.state==status:
 				k.db_set("check",1)
-		statu="<table  width=100%>"
+		statu="<table style='border-collapse: unset' width=50%>"
 
 		for k in self.state:
 			if k.check==1:
-
-				statu+="<tr style='background-color: #4caf50; color: #ffffff; cursor: pointer;border-collapse: seperate;border-spacing:0 10px;border: 1px solid black;'><td style='padding: 10px; text-align: center; border-radius: 10px;'>"+str(k.state)+"</td></tr>"
+				statu += "<tr style='background-color: #4caf50; color: #ffffff; cursor: pointer;'><td style='padding: 6px; text-align: center; border-radius: 10px;'>" + str(
+					k.state) + "</td></tr>"
 			else:
-				statu+="<tr style='background-color: grey; color: white; cursor: pointer;border-collapse: seperate;border-spacing:0 10px;border: 1px solid black;'><td style='padding: 10px; text-align: center; border-radius: 10px;'>"+str(k.state)+"</td></tr>"
-		statu+="</table>"
+				statu += "<tr style='background-color: grey; color: white; cursor: pointer;'><td style='padding: 6px; text-align: center; border-radius: 10px;'>" + str(
+					k.state) + "</td></tr>"
+		statu += "</table>"
 		self.db_set("status_history",statu)
 
 	@frappe.whitelist()
@@ -68,15 +72,16 @@ class CustomCrm(Document):
 			if i<k.idx:
 				k.db_set("check",0)
 
-		statu="<table width=100%>"
+		statu="<table style='border-collapse: unset' width=50%>"
 
 		for k in self.state:
 			if k.check==1:
-
-				statu+="<tr style='background-color: #4caf50; color: #ffffff; cursor: pointer;border-collapse: seperate;border-spacing:0 10px;border: 1px solid black;'><td style='padding: 10px; text-align: center; border-radius: 10px;'>"+str(k.state)+"</td></tr>"
+				statu += "<tr style='background-color: #4caf50; color: #ffffff; cursor: pointer;'><td style='padding: 6px; text-align: center; border-radius: 10px;'>" + str(
+					k.state) + "</td></tr>"
 			else:
-				statu+="<tr style='background-color: grey; color: white; cursor: pointer;border-collapse: seperate;border-spacing:0 10px;border: 1px solid black;'><td style='padding: 10px; text-align: center; border-radius: 10px;'>"+str(k.state)+"</td></tr>"
-		statu+="</table>"
+				statu += "<tr style='background-color: grey; color: white; cursor: pointer;'><td style='padding: 6px; text-align: center; border-radius: 10px;'>" + str(
+					k.state) + "</td></tr>"
+		statu += "</table>"
 		self.db_set("status_history",statu)
 
 
