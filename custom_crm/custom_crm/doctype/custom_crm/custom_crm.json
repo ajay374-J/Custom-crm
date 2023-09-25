@@ -33,7 +33,7 @@
    "fieldname": "account_name",
    "fieldtype": "Data",
    "label": "Account Name",
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "location_of_property",
@@ -53,7 +53,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Bank Name",
-   "options": "Bank name"
+   "options": "Bank name",
+   "reqd": 1
   },
   {
    "fieldname": "value_of_loan",
@@ -160,7 +161,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-25 13:30:56.078613",
+ "modified": "2023-09-25 13:55:45.420942",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",

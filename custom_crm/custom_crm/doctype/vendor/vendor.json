@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:name1",
+ "autoname": "format:{name1}-{#}",
  "creation": "2023-09-25 11:05:31.926591",
  "default_view": "List",
  "doctype": "DocType",
@@ -16,8 +16,7 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name",
-   "unique": 1
+   "label": "Name"
   },
   {
    "fieldname": "phone_no",
@@ -32,11 +31,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-25 11:05:43.938290",
+ "modified": "2023-09-25 13:55:00.644704",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Vendor",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
