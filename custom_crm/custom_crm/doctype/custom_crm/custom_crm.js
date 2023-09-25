@@ -32,6 +32,10 @@ frappe.ui.form.on('Custom Crm', {
 					frm.set_df_property('state', 'read_only', 1);
 					frm.set_df_property('status', 'read_only', 1);
 					frm.set_df_property('status_history', 'read_only', 1);
+					frm.set_df_property('vendor', 'read_only', 1);
+					frm.set_df_property('commission_to_be_given', 'read_only', 1);
+					frm.set_df_property('commission_already_given', 'read_only', 1);
+					frm.set_df_property('commission_due_to_give', 'read_only', 1);
 
 				}
 			})
