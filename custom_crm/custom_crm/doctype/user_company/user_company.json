@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2023-09-25 08:41:47.675518",
  "default_view": "List",
  "doctype": "DocType",
@@ -21,15 +21,16 @@
    "fieldname": "company",
    "fieldtype": "Link",
    "label": "Company",
-   "options": "Company"
+   "options": "Custom Company"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-25 08:41:47.675518",
+ "modified": "2023-09-25 08:49:50.244291",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "User Company",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
