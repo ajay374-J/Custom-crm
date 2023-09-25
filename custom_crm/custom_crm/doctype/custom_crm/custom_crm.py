@@ -18,6 +18,9 @@ class CustomCrm(Document):
 		self.calculate_commission_due()
 		self.get_company_value()
 		self.calculate_vendor_commission_due()
+		if self.value_of_loan <= 0:
+			frappe.throw("Value of loan must be a positive number")
+
 
 	def on_update_after_submit(self):
 		# frappe.msgprint("on update")

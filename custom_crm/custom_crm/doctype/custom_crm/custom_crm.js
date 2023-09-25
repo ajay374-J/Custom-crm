@@ -17,7 +17,7 @@ frappe.ui.form.on('Custom Crm', {
 		if(frm.doc.docstatus==1){
 		if(frm.doc.status!="File Discussion"){
 		frm.add_custom_button(__('Go back to previous state'), function() {
-			frappe.confirm('Are you sure you want to proceed to Next Stage?',
+			frappe.confirm('Are you sure you want to proceed to Previous Stage?',
 				() => {
 					let state=""
 			if(frm.doc.status=="Documents Received"){

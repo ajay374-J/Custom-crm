@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{account_name}-{##}",
+ "autoname": "format:LF-{##}",
  "creation": "2023-09-20 22:14:41.713814",
  "default_view": "List",
  "doctype": "DocType",
@@ -39,14 +39,16 @@
    "fieldname": "location_of_property",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Location of Property"
+   "label": "Location of Property",
+   "reqd": 1
   },
   {
    "fieldname": "type_of_loan",
    "fieldtype": "Select",
    "in_filter": 1,
    "label": "Type of Loan",
-   "options": "Mortgage\nUnsecured"
+   "options": "Mortgage\nUnsecured",
+   "reqd": 1
   },
   {
    "fieldname": "bank_name",
@@ -60,7 +62,8 @@
    "fieldname": "value_of_loan",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Value of Loan"
+   "label": "Value of Loan",
+   "reqd": 1
   },
   {
    "fieldname": "value_of_property",
@@ -161,7 +164,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-25 13:55:45.420942",
+ "modified": "2023-09-25 15:35:45.527401",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",
