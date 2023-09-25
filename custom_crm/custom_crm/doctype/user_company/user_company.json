@@ -8,7 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "user",
-  "company"
+  "company",
+  "read_only_crm_field_for_user"
  ],
  "fields": [
   {
@@ -22,11 +23,17 @@
    "fieldtype": "Link",
    "label": "Custom Company",
    "options": "Custom Company"
+  },
+  {
+   "default": "0",
+   "fieldname": "read_only_crm_field_for_user",
+   "fieldtype": "Check",
+   "label": "Read Only Crm Field For User"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-25 09:08:09.451141",
+ "modified": "2023-09-25 23:08:54.448990",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "User Company",

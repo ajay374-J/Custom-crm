@@ -15,6 +15,27 @@ frappe.ui.form.on('Custom Crm', {
 	},
 	refresh: function(frm) {
 		if(frm.doc.docstatus==1){
+			frappe.model.get_value("User Company", {"user":frappe.session.user}, "read_only_crm_field_for_user", function(value) {
+				if(value.read_only_crm_field_for_user==1){
+					console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&",value)
+					frm.set_df_property('company', 'read_only', 1);
+					frm.set_df_property('account_name', 'read_only', 1);
+					frm.set_df_property('location_of_property', 'read_only', 1);
+					frm.set_df_property('type_of_loan', 'read_only', 1);
+					frm.set_df_property('bank_name', 'read_only', 1);
+					frm.set_df_property('value_of_loan', 'read_only', 1);
+					frm.set_df_property('value_of_property', 'read_only', 1);
+					frm.set_df_property('commission', 'read_only', 1);
+					frm.set_df_property('commission_calculated', 'read_only', 1);
+					frm.set_df_property('commission_receive', 'read_only', 1);
+					frm.set_df_property('commission_due', 'read_only', 1);
+					frm.set_df_property('state', 'read_only', 1);
+					frm.set_df_property('status', 'read_only', 1);
+					frm.set_df_property('status_history', 'read_only', 1);
+
+				}
+			})
+			
 		if(frm.doc.status!="File Discussion"){
 		frm.add_custom_button(__('Go back to previous state'), function() {
 			frappe.confirm('Are you sure you want to go back to Previous Stage?',
