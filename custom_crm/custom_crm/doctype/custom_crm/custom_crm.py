@@ -9,29 +9,23 @@ class CustomCrm(Document):
 		return "{0}".format(frappe._(self.status))
 
 	def on_submit(self):
-		# self.calculate_commission()
-		self.get_company_value()
 		self.calculate_commission_due()
+		self.calculate_vendor_commission_due()
 
-	
 
 	def before_save(self):
-		# self.calculate_commission()
 		self.calculate_commission_due()
 		self.get_company_value()
-		
+		self.calculate_vendor_commission_due()
+
+	# def on_update(self):
+	# 	self.calculate_commission_due()
+	# 	self.calculate_vendor_commission_due()
 
 	def get_company_value(self):
 		comp=frappe.db.get_value("User Company",{"user":frappe.session.user},["Company"])
 		if comp:
 			self.company=comp
-			
-	# def calculate_commission(self):
-	# 	value_of_loan = self.value_of_loan or 0
-	# 	commission = self.commission or 0
-	# 	commission_calculated = value_of_loan * commission / 100
-	# 	self.commission_calculated = commission_calculated
-	# 	print(f"Commission Calculated: {commission_calculated}")
 
 	def calculate_commission_due(self):
 		commission_received = self.commission_receive or 0
@@ -42,6 +36,16 @@ class CustomCrm(Document):
 			commission_due = 0
 		self.commission_due = commission_due
 		print(f"Commission Due: {commission_due}")
+
+	def calculate_vendor_commission_due(self):
+		commission_already_given = self.commission_already_given or 0
+		commission_to_be_given = self.commission_to_be_given or 0
+		if commission_to_be_given > commission_already_given:
+			commission_due_to_give = commission_to_be_given - commission_already_given
+		else:
+			commission_due_to_give = 0
+		self.commission_due_to_give = commission_due_to_give
+		print(f"Commission Due: {commission_due_to_give}")
 
 	@frappe.whitelist()
 	def update_status(self,status):

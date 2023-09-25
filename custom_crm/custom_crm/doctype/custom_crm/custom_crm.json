@@ -145,6 +145,7 @@
    "label": "Commission to be given"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "commission_already_given",
    "fieldtype": "Float",
    "label": "Commission already given"
@@ -152,13 +153,14 @@
   {
    "fieldname": "commission_due_to_give",
    "fieldtype": "Float",
-   "label": "Commission due to give"
+   "label": "Commission due to give",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-25 11:46:36.195256",
+ "modified": "2023-09-25 11:59:45.272303",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",
