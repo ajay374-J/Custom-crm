@@ -1,0 +1,5 @@
+{
+    "web_include_css": [
+        "public/custom.css"
+    ]
+}

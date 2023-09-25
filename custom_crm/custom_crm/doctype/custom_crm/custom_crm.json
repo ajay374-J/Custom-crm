@@ -16,7 +16,10 @@
   "value_of_loan",
   "value_of_property",
   "commission",
-  "commission_calculated",
+  "vendor",
+  "commission_to_be_given",
+  "commission_already_given",
+  "commission_due_to_give",
   "column_break_xkmoo",
   "commission_receive",
   "commission_due",
@@ -70,12 +73,6 @@
    "label": "Commission"
   },
   {
-   "fieldname": "commission_calculated",
-   "fieldtype": "Float",
-   "label": "Commission Calculated",
-   "read_only": 1
-  },
-  {
    "fieldname": "column_break_xkmoo",
    "fieldtype": "Column Break"
   },
@@ -83,7 +80,7 @@
    "fieldname": "commission_receive",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Commission Receive"
+   "label": "Commission Received"
   },
   {
    "fieldname": "commission_due",
@@ -134,12 +131,33 @@
    "label": "Custom Company",
    "options": "Custom Company",
    "read_only": 1
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "Vendor"
+  },
+  {
+   "fieldname": "commission_to_be_given",
+   "fieldtype": "Float",
+   "label": "Commission to be given"
+  },
+  {
+   "fieldname": "commission_already_given",
+   "fieldtype": "Float",
+   "label": "Commission already given"
+  },
+  {
+   "fieldname": "commission_due_to_give",
+   "fieldtype": "Float",
+   "label": "Commission due to give"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-25 09:07:33.486843",
+ "modified": "2023-09-25 11:11:56.607773",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",

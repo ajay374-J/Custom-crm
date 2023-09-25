@@ -16,7 +16,7 @@ frappe.ui.form.on('Custom Crm', {
 	refresh: function(frm) {
 		if(frm.doc.docstatus==1){
 		if(frm.doc.status!="File Discussion"){
-		frm.add_custom_button(__('Previous State'), function() {
+		frm.add_custom_button(__('Go back to previous state'), function() {
 			frappe.confirm('Are you sure you want to proceed to Next Stage?',
 				() => {
 					let state=""
@@ -314,7 +314,7 @@ frappe.ui.form.on('Custom Crm', {
 			});
 		}
 		if(frm.doc.status!="Cheques Handover"){
-		frm.add_custom_button(__('Next State'), function() {
+		frm.add_custom_button(__('Proceed to next state'), function() {
 			frappe.confirm('Are you sure you want to proceed to Next Stage?',
 			() => {
 				let state=""
@@ -617,4 +617,23 @@ frappe.ui.form.on('Custom Crm', {
 	}
 	
 });
+frappe.ui.form.on('Custom Crm', {
+    refresh: function(frm) {
+        var vendor = frm.doc.vendor;
+        if(!vendor) {
+            // If no vendor is selected, hide the fields
+            frm.toggle_display(['commission_to_be_given', 'commission_already_given', 'commission_due_to_give'], false);
+        }
+    },
 
+    vendor: function(frm) {
+        var vendor = frm.doc.vendor;
+        if(vendor) {
+            // If a vendor is selected, show the fields
+            frm.toggle_display(['commission_to_be_given', 'commission_already_given', 'commission_due_to_give'], true);
+        } else {
+            // If no vendor is selected, hide the fields
+            frm.toggle_display(['commission_to_be_given', 'commission_already_given', 'commission_due_to_give'], false);
+        }
+    }
+});
