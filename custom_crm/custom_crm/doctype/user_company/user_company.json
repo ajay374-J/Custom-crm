@@ -20,13 +20,13 @@
   {
    "fieldname": "company",
    "fieldtype": "Link",
-   "label": "Company",
+   "label": "Custom Company",
    "options": "Custom Company"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-25 08:57:05.879700",
+ "modified": "2023-09-25 09:08:09.451141",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "User Company",
