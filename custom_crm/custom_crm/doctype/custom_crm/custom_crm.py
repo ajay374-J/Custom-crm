@@ -49,6 +49,8 @@ class CustomCrm(Document):
 
 	@frappe.whitelist()
 	def update_status(self,status):
+		self.calculate_commission_due()
+		self.calculate_vendor_commission_due()
 		self.db_set("status", status,update_modified=True)
 		for k in self.state:
 			if k.state==status:
@@ -67,6 +69,8 @@ class CustomCrm(Document):
 
 	@frappe.whitelist()
 	def update_prev_status(self,status):
+		self.calculate_commission_due()
+		self.calculate_vendor_commission_due()
 		self.db_set("status", status,update_modified=True)
 		i=10000
 		for k in self.state:
