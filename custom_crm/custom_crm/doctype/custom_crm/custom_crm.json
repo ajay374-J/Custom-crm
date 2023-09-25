@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:LF-{##}",
+ "autoname": "field:account_name",
  "creation": "2023-09-20 22:14:41.713814",
  "default_view": "List",
  "doctype": "DocType",
@@ -16,10 +16,7 @@
   "value_of_loan",
   "value_of_property",
   "commission",
-  "vendor",
-  "commission_to_be_given",
-  "commission_already_given",
-  "commission_due_to_give",
+  "commission_calculated",
   "column_break_xkmoo",
   "commission_receive",
   "commission_due",
@@ -30,53 +27,57 @@
  ],
  "fields": [
   {
+   "allow_on_submit": 1,
    "fieldname": "account_name",
    "fieldtype": "Data",
    "label": "Account Name",
-   "reqd": 1
+   "unique": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "location_of_property",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Location of Property",
-   "reqd": 1
+   "label": "Location of Property"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "type_of_loan",
    "fieldtype": "Select",
    "in_filter": 1,
    "label": "Type of Loan",
-   "options": "Mortgage\nUnsecured",
-   "reqd": 1
+   "options": "Mortgage\nUnsecured"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "bank_name",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Bank Name",
-   "options": "Bank name",
-   "reqd": 1
+   "options": "Bank name"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "value_of_loan",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Value of Loan",
-   "reqd": 1
+   "label": "Value of Loan"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "value_of_property",
    "fieldtype": "Float",
    "label": "Value of Property"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "commission",
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Commission"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "column_break_xkmoo",
    "fieldtype": "Column Break"
   },
@@ -85,7 +86,7 @@
    "fieldname": "commission_receive",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Commission Received"
+   "label": "Commission Receive"
   },
   {
    "allow_on_submit": 1,
@@ -131,47 +132,30 @@
    "read_only": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "company",
    "fieldtype": "Link",
    "hidden": 1,
-   "label": "Company",
+   "label": "Custom Company",
    "options": "Custom Company",
    "read_only": 1
   },
   {
-   "fieldname": "vendor",
-   "fieldtype": "Link",
-   "label": "Vendor",
-   "options": "Vendor"
-  },
-  {
    "allow_on_submit": 1,
-   "fieldname": "commission_to_be_given",
+   "fieldname": "commission_calculated",
    "fieldtype": "Float",
-   "label": "Commission to be given"
-  },
-  {
-   "allow_on_submit": 1,
-   "fieldname": "commission_already_given",
-   "fieldtype": "Float",
-   "label": "Commission already given"
-  },
-  {
-   "allow_on_submit": 1,
-   "fieldname": "commission_due_to_give",
-   "fieldtype": "Float",
-   "label": "Commission due to give",
+   "label": "Commission Calculated",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-25 22:05:10.897185",
+ "modified": "2023-09-25 23:29:02.592385",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
