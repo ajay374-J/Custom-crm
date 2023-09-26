@@ -11,6 +11,7 @@ class CustomCrm(Document):
 	def on_submit(self):
 		self.calculate_commission_due()
 		self.calculate_vendor_commission_due()
+		self.validate_loan_value()
 
 
 	def before_save(self):
@@ -30,6 +31,7 @@ class CustomCrm(Document):
 	def on_update_after_submit(self):
 		self.calculate_commission_due()
 		self.calculate_vendor_commission_due()
+		self.validate_loan_value()
 
 
 	def get_company_value(self):
@@ -41,19 +43,24 @@ class CustomCrm(Document):
 		commission_received = self.commission_receive or 0
 		commission = self.commission or 0
 		if commission_received and commission_received > commission:
-			frappe.throw("Commission should be greater than commission received")
+			frappe.throw("Commission Received cannot be greater than Commission Value")
 		if commission and commission != 0:
 			if commission_received and commission >= commission_received:
 				self.commission_due = commission - commission_received
+				commission_due = commission - commission_received
+				self.db_set("commission_due", commission_due, update_modified=True)
 
 	def calculate_vendor_commission_due(self):
 		commission_already_given = self.commission_already_given or 0
 		commission_to_be_given = self.commission_to_be_given or 0
 		if commission_already_given and commission_already_given > commission_to_be_given:
-			frappe.throw("Vendor Commission should be greater than commission received")
+			frappe.throw("Vendor Commission Received cannot be greater than Commission Value")
 		if commission_to_be_given and commission_to_be_given != 0:
 			if commission_already_given and commission_to_be_given >= commission_already_given:
 				self.commission_due_to_give = commission_to_be_given - commission_already_given
+				commission_due_to_give = commission_to_be_given - commission_already_given
+				self.db_set("commission_due_to_give", commission_due_to_give, update_modified=True)
+
 
 	@frappe.whitelist()
 	def update_status(self,status):
