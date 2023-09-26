@@ -130,7 +130,7 @@ class CustomCrm(Document):
 		for k in self.state:
 			if k.idx==idx-1:
 				print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&",idx)
-				self.add_comment('Comment', text=str(frappe.session.user)+'has changed status from'+str(k.state)+"to"+str(self.status))
+				self.add_comment('Comment', text=str(frappe.session.user)+' has changed status from'+str(k.state)+"to"+str(self.status))
 
 
 
