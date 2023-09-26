@@ -57,9 +57,11 @@ class CustomCrm(Document):
 
 	@frappe.whitelist()
 	def update_status(self,status):
+		idx=0
 		self.db_set("status", status,update_modified=True)
 		for k in self.state:
 			if k.state==status:
+				idx=k.idx
 				k.db_set("check",1)
 		statu="<table style='border-collapse: unset' width=50%>"
 
@@ -72,13 +74,18 @@ class CustomCrm(Document):
 					k.state) + "</td></tr>"
 		statu += "</table>"
 		self.db_set("status_history",statu,update_modified=False)
+		for k in self.state:
+			if k.idx==idx-1:
+				self.add_comment('Comment', text=str(frappe.session.user)+'has changed status from '+str(k.state)+" to "+str(self.status))
 
 	@frappe.whitelist()
 	def update_prev_status(self,status):
 		self.db_set("status", status,update_modified=True)
 		i=10000
+		idx=0
 		for k in self.state:
 			if k.state==status:
+				idx=k.idx
 				k.db_set("check",1)
 				i=k.idx
 				print(i,status,k.state)
@@ -96,6 +103,11 @@ class CustomCrm(Document):
 					k.state) + "</td></tr>"
 		statu += "</table>"
 		self.db_set("status_history",statu,update_modified=False)
+
+		for k in self.state:
+			if k.idx==idx-1:
+				print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&",idx)
+				self.add_comment('Comment', text=str(frappe.session.user)+'has changed status from'+str(k.state)+"to"+str(self.status))
 
 
 
