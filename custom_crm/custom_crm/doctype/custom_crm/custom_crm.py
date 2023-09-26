@@ -83,7 +83,7 @@ class CustomCrm(Document):
 		self.db_set("status_history",statu,update_modified=False)
 		for k in self.state:
 			if k.idx==idx-1:
-				self.add_comment('Comment', text=str(frappe.session.user)+'has changed status from '+str(k.state)+" to "+str(self.status))
+				self.add_comment('Comment', text=str(frappe.session.user)+' has changed status from '+str(k.state)+" to "+str(self.status))
 
 	@frappe.whitelist()
 	def update_prev_status(self,status):
