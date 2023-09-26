@@ -109,7 +109,7 @@
    "in_standard_filter": 1,
    "label": "Status",
    "no_copy": 1,
-   "options": "File Discussion\nDocuments Received\nOur Queries Given\nQueries Received\nAssessment\nLogin\nBank Login Queries\nLogin Completion\nCredit Queries\nSanction\nTechnical Assessment\nLegel Assessment\nOps\nDocket\nDisbursement\nCheques Handover",
+   "options": "File Discussion\nDocuments Received\nOur Queries Given\nQueries Received\nAssessment\nLogin\nBank Login Queries\nLogin Completion\nCredit Queries\nSanction\nTechnical Assessment\nLegel Assessment\nOps\nDocket\nDisbursement\nCheques Handover\nCompletion",
    "read_only": 1
   },
   {
@@ -117,7 +117,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Custom Crm",
+   "options": "Loan Files",
    "print_hide": 1,
    "read_only": 1
   },
@@ -125,7 +125,6 @@
    "allow_on_submit": 1,
    "fieldname": "state",
    "fieldtype": "Table",
-   "hidden": 1,
    "label": "State",
    "options": "Status",
    "read_only": 1
@@ -176,10 +175,10 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-26 00:16:19.567405",
+ "modified": "2023-09-26 23:10:55.871829",
  "modified_by": "Administrator",
  "module": "custom_crm",
- "name": "Custom Crm",
+ "name": "Loan Files",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

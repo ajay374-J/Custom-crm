@@ -1,7 +1,7 @@
 // Copyright (c) 2023, Frappe Technologies Pvt. Ltd. and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Custom Crm', {
+frappe.ui.form.on('Loan Files', {
 	before_save:function(frm){
 		frappe.call({
 			method: "stages",
@@ -13,7 +13,30 @@ frappe.ui.form.on('Custom Crm', {
 			}
 		})
 	},
+	setup:function(frm){
+		frappe.call({
+			method: "get_company_value",
+			doc:frm.doc,
+			callback: function(r){
+				frm.refresh_field("company")
+				// me.frm.reload_doc();
+
+			}
+		})
+	},
+	
 	refresh: function(frm) {
+		if(frm.doc.__islocal){
+			frappe.call({
+				method: "get_company_value",
+				doc:frm.doc,
+				callback: function(r){
+					frm.refresh_field("company")
+					// me.frm.reload_doc();
+
+				}
+			})
+		}
 		if(frm.doc.docstatus==1){
 			frappe.model.get_value("User Company", {"user":frappe.session.user}, "read_only_crm_field_for_user", function(value) {
 				if(value.read_only_crm_field_for_user==1){
@@ -330,6 +353,25 @@ frappe.ui.form.on('Custom Crm', {
 					}
 				});
 			}
+			if(frm.doc.status=="Completion"){
+				let state="Cheques Handover"
+				frappe.call({
+					method: "update_prev_status",
+					doc:frm.doc,
+					args: {status: state},
+					callback: function(r){
+						me.frm.reload_doc();
+	
+						frappe.msgprint("Status Changed Successfully")
+	
+						// frm.save("Update")
+					},
+					always: function() {
+						frappe.ui.form.is_saving = false;
+							// frappe.msgprint("Draft Status Set")
+					}
+				});
+			}
 				}, () => {
 					// action to perform if No is selected
 				})
@@ -338,7 +380,7 @@ frappe.ui.form.on('Custom Crm', {
 					
 			});
 		}
-		if(frm.doc.status!="Cheques Handover"){
+		if(frm.doc.status!="Completion"){
 		frm.add_custom_button(__('Proceed to next state'), function() {
 			frappe.confirm('Are you sure you want to proceed to Next Stage?',
 			() => {
@@ -628,6 +670,25 @@ frappe.ui.form.on('Custom Crm', {
 					}
 				});
 			}
+			if(frm.doc.status=="Cheques Handover"){
+				let state="Completion"
+				frappe.call({
+					method: "update_status",
+					doc:frm.doc,
+					args: {status: state},
+					callback: function(r){
+						me.frm.reload_doc();
+	
+						frappe.msgprint("Status Changed Successfully")
+	
+						// frm.save("Update")
+					},
+					always: function() {
+						frappe.ui.form.is_saving = false;
+							// frappe.msgprint("Draft Status Set")
+					}
+				});
+			}
 			}, () => {
 				// action to perform if No is selected
 			})
@@ -642,7 +703,7 @@ frappe.ui.form.on('Custom Crm', {
 	}
 	
 });
-frappe.ui.form.on('Custom Crm', {
+frappe.ui.form.on('Loan Files', {
     refresh: function(frm) {
         var vendor = frm.doc.vendor;
         if(!vendor) {
