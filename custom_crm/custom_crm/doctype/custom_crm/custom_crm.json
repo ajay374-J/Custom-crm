@@ -182,18 +182,19 @@
    "read_only": 1
   },
   {
-   "default": "LF-.{abbr}.-.##.-.{account_name}.",
+   "default": "LF-.{abbr}.-",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "hidden": 1,
    "label": "Naming Series",
-   "options": "LF-.{abbr}.-.##.-.{account_name}."
+   "options": "LF-.{abbr}.-",
+   "print_hide": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-27 14:59:58.577522",
+ "modified": "2023-09-28 00:32:08.453482",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",
