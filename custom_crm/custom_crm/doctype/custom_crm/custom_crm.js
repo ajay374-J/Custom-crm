@@ -1,8 +1,9 @@
 // Copyright (c) 2023, Frappe Technologies Pvt. Ltd. and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Loan Files', {
+frappe.ui.form.on('Custom Crm', {
 	before_save:function(frm){
+		if(frm.doc.__islocal){
 		frappe.call({
 			method: "stages",
 			doc:frm.doc,
@@ -12,6 +13,7 @@ frappe.ui.form.on('Loan Files', {
 
 			}
 		})
+	}
 	},
 	setup:function(frm){
 		frappe.call({
@@ -36,6 +38,15 @@ frappe.ui.form.on('Loan Files', {
 
 				}
 			})
+			// frappe.call({
+			// 	method: "stages",
+			// 	doc:frm.doc,
+			// 	callback: function(r){
+			// 		frm.refresh_field("state")
+			// 		// me.frm.reload_doc();
+	
+			// 	}
+			// })
 		}
 		if(frm.doc.docstatus==1){
 			frappe.model.get_value("User Company", {"user":frappe.session.user}, "read_only_crm_field_for_user", function(value) {
@@ -63,11 +74,30 @@ frappe.ui.form.on('Loan Files', {
 				}
 			})
 			
-		if(frm.doc.status!="File Discussion"){
+		if(frm.doc.status!="Draft"){
 		frm.add_custom_button(__('Go back to previous state'), function() {
 			frappe.confirm('Are you sure you want to go back to Previous Stage?',
 				() => {
 					let state=""
+			if(frm.doc.status=="File Discussion"){
+				let state="Draft"
+				frappe.call({
+					method: "update_prev_status",
+					doc:frm.doc,
+					args: {status: state},
+					callback: function(r){
+						me.frm.reload_doc();
+	
+						frappe.msgprint("Status Changed Successfully")
+	
+						// frm.save("Update")
+					},
+					always: function() {
+						frappe.ui.form.is_saving = false;
+							// frappe.msgprint("Draft Status Set")
+					}
+				});
+			}
 			if(frm.doc.status=="Documents Received"){
 				let state="File Discussion"
 				frappe.call({
@@ -385,6 +415,25 @@ frappe.ui.form.on('Loan Files', {
 			frappe.confirm('Are you sure you want to proceed to Next Stage?',
 			() => {
 				let state=""
+				if(frm.doc.status=="Draft"){
+					let state="File Discussion"
+					frappe.call({
+						method: "update_status",
+						doc:frm.doc,
+						args: {status: state},
+						callback: function(r){
+							me.frm.reload_doc();
+		
+							frappe.msgprint("Status Changed Successfully")
+		
+							// frm.save("Update")
+						},
+						always: function() {
+							frappe.ui.form.is_saving = false;
+								// frappe.msgprint("Draft Status Set")
+						}
+					});
+				}
 			if(frm.doc.status=="File Discussion"){
 				let state="Documents Received"
 				frappe.call({
@@ -703,7 +752,7 @@ frappe.ui.form.on('Loan Files', {
 	}
 	
 });
-frappe.ui.form.on('Loan Files', {
+frappe.ui.form.on('Custom Crm', {
     refresh: function(frm) {
         var vendor = frm.doc.vendor;
         if(!vendor) {

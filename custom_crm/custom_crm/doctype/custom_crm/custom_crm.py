@@ -4,7 +4,7 @@
 import frappe
 from frappe.model.document import Document
 
-class LoanFiles(Document):
+class CustomCrm(Document):
 	def get_feed(self):
 		return "{0}".format(frappe._(self.status))
 
@@ -83,6 +83,9 @@ class LoanFiles(Document):
 
 	@frappe.whitelist()
 	def update_status(self,status):
+		if self.status=="Draft":
+			self.add_comment('Comment', text=str(frappe.session.user)+' has changed status from '+str(self.status)+" to "+str(status))
+
 		idx=0
 		
 		for k in self.state:
@@ -107,7 +110,9 @@ class LoanFiles(Document):
 
 	@frappe.whitelist()
 	def update_prev_status(self,status):
-		
+		if status=="Draft":
+			self.add_comment('Comment', text=str(frappe.session.user)+' has changed status from '+str(self.status)+" to "+str(status))
+
 		i=10000
 		idx=0
 		for k in self.state:
@@ -139,7 +144,7 @@ class LoanFiles(Document):
 
 		for k in self.state:
 			if k.idx==idx-1:
-				self.add_comment('Comment', text=str(frappe.session.user)+' has changed status from'+str(k.state)+"to"+str(self.status))
+				self.add_comment('Comment', text=str(frappe.session.user)+' has changed status from '+str(k.state)+" to "+str(self.status))
 
 
 
