@@ -38,9 +38,15 @@ class CustomCrm(Document):
 		comp=frappe.db.get_value("User Company",{"user":frappe.session.user},["Company"])
 		if comp:
 			self.company=comp
+			com=frappe.get_doc("Custom Company",comp)
+			self.abbr=com.abbr
 		else:
 			ls=frappe.get_doc("Loan Settings")
-			self.company=ls.company
+			if ls.company:
+				self.company=ls.company
+				com=frappe.get_doc("Custom Company",ls.company)
+				self.abbr=com.abbr
+
 
 	def calculate_commission_due(self):
 		commission_received = self.commission_receive or 0

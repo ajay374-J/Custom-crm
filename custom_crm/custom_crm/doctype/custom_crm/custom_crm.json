@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:LF-{##}",
+ "autoname": "naming_series:naming_series",
  "creation": "2023-09-20 22:14:41.713814",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,6 +9,8 @@
  "engine": "InnoDB",
  "field_order": [
   "company",
+  "abbr",
+  "naming_series",
   "account_name",
   "location_of_property",
   "type_of_loan",
@@ -117,7 +119,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Loan Files",
+   "options": "Custom Crm",
    "print_hide": 1,
    "read_only": 1
   },
@@ -170,16 +172,32 @@
    "fieldtype": "Float",
    "label": "Commission due to give",
    "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "abbr",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Abbr",
+   "read_only": 1
+  },
+  {
+   "default": "LF-.{abbr}.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "LF-.{abbr}.-"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-27 09:25:14.144331",
+ "modified": "2023-09-27 14:25:04.190037",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
