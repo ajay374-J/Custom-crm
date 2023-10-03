@@ -28,7 +28,103 @@
   "state",
   "status",
   "status_history",
-  "amended_from"
+  "amended_from",
+  "stages_section",
+  "file_discussion",
+  "column_break_avesg",
+  "submit",
+  "column_break_1vmej",
+  "revert",
+  "section_break_guc8y",
+  "documents_received",
+  "column_break_fvhlj",
+  "submit1",
+  "col1",
+  "revert1",
+  "section_break_lq0rt",
+  "our_queries_given",
+  "column_break_yfkmy",
+  "submit2",
+  "column_break_blvod",
+  "revert2",
+  "section_break_eu4b3",
+  "queries_received",
+  "column_break_mcwkm",
+  "submit3",
+  "column_break_kws31",
+  "revert3",
+  "section_break_zrcq4",
+  "assessment",
+  "column_break_gcttp",
+  "submit4",
+  "column_break_i2zir",
+  "revert4",
+  "section_break_nfgi3",
+  "login",
+  "column_break_msusy",
+  "submit5",
+  "column_break_kxved",
+  "revert5",
+  "section_break_wjywy",
+  "bank_login_queries",
+  "column_break_4sirb",
+  "submit6",
+  "column_break_erqhm",
+  "revert6",
+  "section_break_ndpk7",
+  "login_completion",
+  "column_break_zlnge",
+  "submit7",
+  "column_break_ggzvj",
+  "revert7",
+  "section_break_q5puy",
+  "credit_queries",
+  "column_break_r6zsi",
+  "submit8",
+  "column_break_d6fqg",
+  "revert8",
+  "section_break_1wqhj",
+  "sanction",
+  "column_break_rzxrv",
+  "submit9",
+  "column_break_okjqz",
+  "revert9",
+  "section_break_bcgmj",
+  "technical_assessment",
+  "column_break_bl6oh",
+  "submit10",
+  "column_break_39dqd",
+  "revert10",
+  "section_break_1uhre",
+  "legel_assessment",
+  "column_break_dsd7k",
+  "submit11",
+  "column_break_jfgkk",
+  "revert11",
+  "section_break_xvmoq",
+  "ops",
+  "column_break_js734",
+  "submit12",
+  "column_break_qre4y",
+  "revert12",
+  "section_break_e5x87",
+  "docket",
+  "column_break_zgqyp",
+  "submit13",
+  "column_break_hdrbl",
+  "revert13",
+  "section_break_dstdx",
+  "disbursement",
+  "column_break_7hp0l",
+  "submit14",
+  "column_break_pgicr",
+  "revert14",
+  "section_break_ptx36",
+  "cheques_handover",
+  "column_break_qmpz0",
+  "submit15",
+  "column_break_sbmjz",
+  "revert15"
  ],
  "fields": [
   {
@@ -127,6 +223,7 @@
    "allow_on_submit": 1,
    "fieldname": "state",
    "fieldtype": "Table",
+   "hidden": 1,
    "label": "State",
    "options": "Status",
    "read_only": 1
@@ -189,12 +286,509 @@
    "label": "Naming Series",
    "options": "LF-.{abbr}.-",
    "print_hide": 1
+  },
+  {
+   "fieldname": "stages_section",
+   "fieldtype": "Section Break",
+   "label": "Stages"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "file_discussion",
+   "fieldtype": "Select",
+   "label": "File Discussion",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_avesg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_1vmej",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "section_break_guc8y",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "documents_received",
+   "fieldtype": "Select",
+   "label": "Documents Received",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_fvhlj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit1",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "revert1",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "section_break_lq0rt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "our_queries_given",
+   "fieldtype": "Select",
+   "label": "Our Queries Given",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_eu4b3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "queries_received",
+   "fieldtype": "Select",
+   "label": "Queries Received",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_zrcq4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "assessment",
+   "fieldtype": "Select",
+   "label": "Assessment",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_nfgi3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "login",
+   "fieldtype": "Select",
+   "label": "Login",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wjywy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "bank_login_queries",
+   "fieldtype": "Select",
+   "label": "Bank Login Queries",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ndpk7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "login_completion",
+   "fieldtype": "Select",
+   "label": "Login Completion",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_q5puy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "credit_queries",
+   "fieldtype": "Select",
+   "label": "Credit Queries",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_1wqhj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "sanction",
+   "fieldtype": "Select",
+   "label": "Sanction",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_bcgmj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "technical_assessment",
+   "fieldtype": "Select",
+   "label": "Technical Assessment",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_1uhre",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "legel_assessment",
+   "fieldtype": "Select",
+   "label": "Legel Assessment",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_xvmoq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "ops",
+   "fieldtype": "Select",
+   "label": "Ops",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_e5x87",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "docket",
+   "fieldtype": "Select",
+   "label": "Docket",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_dstdx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "disbursement",
+   "fieldtype": "Select",
+   "label": "Disbursement",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ptx36",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "cheques_handover",
+   "fieldtype": "Select",
+   "label": "Cheques Handover",
+   "options": "\nYes\nNo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_yfkmy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit2",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_blvod",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert2",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_mcwkm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit3",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_kws31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert3",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_gcttp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit4",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_i2zir",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert4",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_msusy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit5",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_kxved",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert5",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_4sirb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit6",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_erqhm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert6",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_zlnge",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit7",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_ggzvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert7",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_r6zsi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit8",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_d6fqg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert8",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_rzxrv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit9",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_okjqz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert9",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_bl6oh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit10",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_39dqd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert10",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_dsd7k",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit11",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_jfgkk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert11",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_js734",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit12",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_qre4y",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert12",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_zgqyp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit13",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_hdrbl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert13",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_7hp0l",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit14",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_pgicr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert14",
+   "fieldtype": "Button",
+   "label": "Revert"
+  },
+  {
+   "fieldname": "column_break_qmpz0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "submit15",
+   "fieldtype": "Button",
+   "label": "Submit"
+  },
+  {
+   "fieldname": "column_break_sbmjz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "revert15",
+   "fieldtype": "Button",
+   "label": "Revert"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-28 00:32:08.453482",
+ "modified": "2023-10-03 08:13:23.274911",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",

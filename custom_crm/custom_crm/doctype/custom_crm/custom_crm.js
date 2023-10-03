@@ -73,684 +73,860 @@ frappe.ui.form.on('Custom Crm', {
 
 				}
 			})
-			
-		if(frm.doc.status!="Draft"){
-		frm.add_custom_button(__('Go back to previous state'), function() {
-			frappe.confirm('Are you sure you want to go back to Previous Stage?',
-				() => {
-					let state=""
-			if(frm.doc.status=="File Discussion"){
-				let state="Draft"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+
+	// 	if(frm.doc.status!="Draft"){
+		
+	// 	frm.add_custom_button(__('Go back to previous state'), function() {
+	// 		frappe.confirm('Are you sure you want to go back to Previous Stage?',
+	// 			() => {
+	// 				let state=""
+	// 		if(frm.doc.status=="File Discussion"){
+	// 			let state="Draft"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Documents Received"){
-				let state="File Discussion"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Documents Received"){
+	// 			let state="File Discussion"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Our Queries Given"){
-				let state="Documents Received"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Our Queries Given"){
+	// 			let state="Documents Received"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Queries Received"){
-				let state="Our Queries Given"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Queries Received"){
+	// 			let state="Our Queries Given"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Assessment"){
-				let state="Queries Received"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Assessment"){
+	// 			let state="Queries Received"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Login"){
-				let state="Assessment"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Login"){
+	// 			let state="Assessment"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Bank Login Queries"){
-				let state="Login"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Bank Login Queries"){
+	// 			let state="Login"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Login Completion"){
-				let state="Bank Login Queries"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Login Completion"){
+	// 			let state="Bank Login Queries"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Credit Queries"){
-				let state="Login Completion"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Credit Queries"){
+	// 			let state="Login Completion"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Sanction"){
-				let state="Credit Queries"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Sanction"){
+	// 			let state="Credit Queries"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Technical Assessment"){
-				let state="Sanction"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Technical Assessment"){
+	// 			let state="Sanction"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Legal Assessment"){
-				let state="Technical Assessment"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Legal Assessment"){
+	// 			let state="Technical Assessment"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Ops"){
-				let state="Legal Assessment"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Ops"){
+	// 			let state="Legal Assessment"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Docket"){
-				let state="Ops"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Docket"){
+	// 			let state="Ops"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Disbursement"){
-				let state="Docket"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Disbursement"){
+	// 			let state="Docket"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Cheques Handover"){
-				let state="Disbursement"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Cheques Handover"){
+	// 			let state="Disbursement"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Completion"){
-				let state="Cheques Handover"
-				frappe.call({
-					method: "update_prev_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Completion"){
+	// 			let state="Cheques Handover"
+	// 			frappe.call({
+	// 				method: "update_prev_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-				}, () => {
-					// action to perform if No is selected
-				})
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 			}, () => {
+	// 				// action to perform if No is selected
+	// 			})
 			
 			
 					
-			});
-		}
-		if(frm.doc.status!="Completion"){
-		frm.add_custom_button(__('Proceed to next state'), function() {
-			frappe.confirm('Are you sure you want to proceed to Next Stage?',
-			() => {
-				let state=""
-				if(frm.doc.status=="Draft"){
-					let state="File Discussion"
-					frappe.call({
-						method: "update_status",
-						doc:frm.doc,
-						args: {status: state},
-						callback: function(r){
-							me.frm.reload_doc();
+	// 		});
+	// 	}
+	// 	if(frm.doc.status!="Completion"){
+	// 	frm.add_custom_button(__('Proceed to next state'), function() {
+	// 		frappe.confirm('Are you sure you want to proceed to Next Stage?',
+	// 		() => {
+	// 			let state=""
+	// 			if(frm.doc.status=="Draft"){
+	// 				let state="File Discussion"
+	// 				frappe.call({
+	// 					method: "update_status",
+	// 					doc:frm.doc,
+	// 					args: {status: state},
+	// 					callback: function(r){
+	// 						me.frm.reload_doc();
 		
-							frappe.msgprint("Status Changed Successfully")
+	// 						frappe.msgprint("Status Changed Successfully")
 		
-							// frm.save("Update")
-						},
-						always: function() {
-							frappe.ui.form.is_saving = false;
-								// frappe.msgprint("Draft Status Set")
-						}
-					});
-				}
-			if(frm.doc.status=="File Discussion"){
-				let state="Documents Received"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 						// frm.save("Update")
+	// 					},
+	// 					always: function() {
+	// 						frappe.ui.form.is_saving = false;
+	// 							// frappe.msgprint("Draft Status Set")
+	// 					}
+	// 				});
+	// 			}
+	// 		if(frm.doc.status=="File Discussion"){
+	// 			let state="Documents Received"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Documents Received"){
-				let state="Our Queries Given"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Documents Received"){
+	// 			let state="Our Queries Given"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Our Queries Given"){
-				let state="Queries Received"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Our Queries Given"){
+	// 			let state="Queries Received"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Queries Received"){
-				let state="Assessment"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Queries Received"){
+	// 			let state="Assessment"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Assessment"){
-				let state="Login"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Assessment"){
+	// 			let state="Login"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Login"){
-				let state="Bank Login Queries"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Login"){
+	// 			let state="Bank Login Queries"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Bank Login Queries"){
-				let state="Login Completion"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Bank Login Queries"){
+	// 			let state="Login Completion"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Login Completion"){
-				let state="Credit Queries"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Login Completion"){
+	// 			let state="Credit Queries"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Credit Queries"){
-				let state="Sanction"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Credit Queries"){
+	// 			let state="Sanction"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Sanction"){
-				let state="Technical Assessment"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Sanction"){
+	// 			let state="Technical Assessment"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Technical Assessment"){
-				let state="Legal Assessment"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Technical Assessment"){
+	// 			let state="Legal Assessment"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Legal Assessment"){
-				let state="Ops"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Legal Assessment"){
+	// 			let state="Ops"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Ops"){
-				let state="Docket"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Ops"){
+	// 			let state="Docket"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Docket"){
-				let state="Disbursement"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Docket"){
+	// 			let state="Disbursement"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Disbursement"){
-				let state="Cheques Handover"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Disbursement"){
+	// 			let state="Cheques Handover"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			if(frm.doc.status=="Cheques Handover"){
-				let state="Completion"
-				frappe.call({
-					method: "update_status",
-					doc:frm.doc,
-					args: {status: state},
-					callback: function(r){
-						me.frm.reload_doc();
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		if(frm.doc.status=="Cheques Handover"){
+	// 			let state="Completion"
+	// 			frappe.call({
+	// 				method: "update_status",
+	// 				doc:frm.doc,
+	// 				args: {status: state},
+	// 				callback: function(r){
+	// 					me.frm.reload_doc();
 	
-						frappe.msgprint("Status Changed Successfully")
+	// 					frappe.msgprint("Status Changed Successfully")
 	
-						// frm.save("Update")
-					},
-					always: function() {
-						frappe.ui.form.is_saving = false;
-							// frappe.msgprint("Draft Status Set")
-					}
-				});
-			}
-			}, () => {
-				// action to perform if No is selected
-			})
+	// 					// frm.save("Update")
+	// 				},
+	// 				always: function() {
+	// 					frappe.ui.form.is_saving = false;
+	// 						// frappe.msgprint("Draft Status Set")
+	// 				}
+	// 			});
+	// 		}
+	// 		}, () => {
+	// 			// action to perform if No is selected
+	// 		})
 			
 			
 				
-		});
-	}
-	}
+	// 	});
+	// }
+	// }
 	
-	
+		}
+	},
+	submit:function(frm){
+		frm.set_value("file_discussion","Yes")
+		frm.refresh("file_discussion")
+		frm.save("Update")
+
+	},
+	revert:function(frm){
+		frm.set_value("file_discussion","No")
+		frm.refresh("file_discussion")
+		frm.save("Update")
+	},
+	submit1:function(frm){
+		frm.set_value("documents_received","Yes")
+		frm.refresh("documents_received")
+		frm.save("Update")
+
+	},
+	revert1:function(frm){
+		frm.set_value("documents_received","No")
+		frm.refresh("documents_received")
+		frm.save("Update")
+	},
+	submit2:function(frm){
+		frm.set_value("our_queries_given","Yes")
+		frm.refresh("our_queries_given")
+		frm.save("Update")
+
+	},
+	revert2:function(frm){
+		frm.set_value("our_queries_given","No")
+		frm.refresh("our_queries_given")
+		frm.save("Update")
+	},
+	submit3:function(frm){
+		frm.set_value("queries_received","Yes")
+		frm.refresh("queries_received")
+		frm.save("Update")
+
+	},
+	revert3:function(frm){
+		frm.set_value("queries_received","No")
+		frm.refresh("queries_received")
+		frm.save("Update")
+	},
+	submit4:function(frm){
+		frm.set_value("assessment","Yes")
+		frm.refresh("assessment")
+		frm.save("Update")
+
+	},
+	revert4:function(frm){
+		frm.set_value("assessment","No")
+		frm.refresh("assessment")
+		frm.save("Update")
+	},
+	submit5:function(frm){
+		frm.set_value("login","Yes")
+		frm.refresh("login")
+		frm.save("Update")
+
+	},
+	revert5:function(frm){
+		frm.set_value("login","No")
+		frm.refresh("login")
+		frm.save("Update")
+	},
+	submit6:function(frm){
+		frm.set_value("bank_login_queries","Yes")
+		frm.refresh("bank_login_queries")
+		frm.save("Update")
+
+	},
+	revert6:function(frm){
+		frm.set_value("bank_login_queries","No")
+		frm.refresh("bank_login_queries")
+		frm.save("Update")
+	},
+	submit7:function(frm){
+		frm.set_value("login_completion","Yes")
+		frm.refresh("login_completion")
+		frm.save("Update")
+
+	},
+	revert7:function(frm){
+		frm.set_value("login_completion","No")
+		frm.refresh("login_completion")
+		frm.save("Update")
+	},
+	submit8:function(frm){
+		frm.set_value("credit_queries","Yes")
+		frm.refresh("credit_queries")
+		frm.save("Update")
+
+	},
+	revert8:function(frm){
+		frm.set_value("credit_queries","No")
+		frm.refresh("credit_queries")
+		frm.save("Update")
+	},
+	submit9:function(frm){
+		frm.set_value("sanction","Yes")
+		frm.refresh("sanction")
+		frm.save("Update")
+
+	},
+	revert9:function(frm){
+		frm.set_value("sanction","No")
+		frm.refresh("sanction")
+		frm.save("Update")
+	},
+	submit10:function(frm){
+		frm.set_value("technical_assessment","Yes")
+		frm.refresh("technical_assessment")
+		frm.save("Update")
+
+	},
+	revert10:function(frm){
+		frm.set_value("technical_assessment","No")
+		frm.refresh("technical_assessment")
+		frm.save("Update")
+	},
+	submit11:function(frm){
+		frm.set_value("legel_assessment","Yes")
+		frm.refresh("legel_assessment")
+		frm.save("Update")
+
+	},
+	revert11:function(frm){
+		frm.set_value("legel_assessment","No")
+		frm.refresh("legel_assessment")
+		frm.save("Update")
+	},
+	submit12:function(frm){
+		frm.set_value("ops","Yes")
+		frm.refresh("ops")
+		frm.save("Update")
+
+	},
+	revert12:function(frm){
+		frm.set_value("ops","No")
+		frm.refresh("ops")
+		frm.save("Update")
+	},
+	submit13:function(frm){
+		frm.set_value("docket","Yes")
+		frm.refresh("docket")
+		frm.save("Update")
+
+	},
+	revert13:function(frm){
+		frm.set_value("docket","No")
+		frm.refresh("docket")
+		frm.save("Update")
+	},
+	submit14:function(frm){
+		frm.set_value("disbursement","Yes")
+		frm.refresh("disbursement")
+		frm.save("Update")
+
+	},
+	revert14:function(frm){
+		frm.set_value("disbursement","No")
+		frm.refresh("disbursement")
+		frm.save("Update")
+	},
+	submit15:function(frm){
+		frm.set_value("cheques_handover","Yes")
+		frm.refresh("cheques_handover")
+		frm.save("Update")
+
+	},
+	revert15:function(frm){
+		frm.set_value("cheques_handover","No")
+		frm.refresh("cheques_handover")
+		frm.save("Update")
 	}
-	
 });
 frappe.ui.form.on('Custom Crm', {
     refresh: function(frm) {
