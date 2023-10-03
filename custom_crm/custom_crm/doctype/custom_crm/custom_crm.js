@@ -77,137 +77,293 @@ frappe.ui.form.on('Custom Crm', {
 		}
 	},
 	refresh: function(frm) {
+	            document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert']")[1].style.cssText += 'height:21px';
+
+                document.querySelectorAll("[data-fieldname='documents_received']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='documents_received']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit1']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert1']")[1].style.cssText += 'height:21px';
+
+                document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit2']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert2']")[1].style.cssText += 'height:21px';
+
+                document.querySelectorAll("[data-fieldname='queries_received']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='queries_received']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit3']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert3']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='assessment']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='assessment']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit4']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert4']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='login']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='login']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit5']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert5']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit6']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert6']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='login_completion']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='login_completion']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit7']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert7']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit8']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert8']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='sanction']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='sanction']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit9']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert9']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit10']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert10']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit11']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert11']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='ops']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='ops']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit12']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert12']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='docket']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='docket']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit13']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert13']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='disbursement']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='disbursement']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit14']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert14']")[1].style.cssText += 'height:21px';
+
+
+                document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.marginLeft = "75px";
+                document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.width = "150px";
+                document.querySelectorAll("[data-fieldname='submit15']")[1].style.cssText += 'height:21px';
+		        document.querySelectorAll("[data-fieldname='revert15']")[1].style.cssText += 'height:21px';
+
+
         if (!frm.doc.__islocal) {
+//            if(!frm.doc.docstatus==1){
+//            frm.toggle_display(['submit'], false);
+//				frm.toggle_display(['revert'], false);
+//            }
             var file_discussion = frm.doc.file_discussion;
-            if (file_discussion === 'Yes') {
+            if (file_discussion) {
                 frm.toggle_display(['submit'], false);
 				frm.toggle_display(['revert'], true);
+                document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.backgroundColor = "#d3f8d3";
             } else {
                 frm.toggle_display(['revert'], false);
 				frm.toggle_display(['submit'], true);
+                document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.backgroundColor = "white";
+
             }
 
 		var documents_received = frm.doc.documents_received;
-		if (documents_received === 'Yes') {
+		if (documents_received) {
 		frm.toggle_display(['submit1'], false);
 		frm.toggle_display(['revert1'], true);
+		document.querySelectorAll("[data-fieldname='documents_received']")[0].style.backgroundColor ="#d3f8d3";
 		} else {
 		frm.toggle_display(['revert1'], false);
 		frm.toggle_display(['submit1'], true);
+		document.querySelectorAll("[data-fieldname='documents_received']")[0].style.backgroundColor ="white";
 		}
 
 		var our_queries_given = frm.doc.our_queries_given;
-		if (our_queries_given === 'Yes') {
+		if (our_queries_given) {
 		frm.toggle_display(['submit2'], false);
 		frm.toggle_display(['revert2'], true);
+		document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.backgroundColor ="#d3f8d3";
 		} else {
 		frm.toggle_display(['revert2'], false);
 		frm.toggle_display(['submit2'], true);
+		document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.backgroundColor ="white";
 		}
 		var queries_received = frm.doc.queries_received;
-		if (queries_received === 'Yes') {
+		if (queries_received) {
 		frm.toggle_display(['submit3'], false);
 		frm.toggle_display(['revert3'], true);
+		document.querySelectorAll("[data-fieldname='queries_received']")[0].style.backgroundColor ="#d3f8d3";
 		} else {
 		frm.toggle_display(['revert3'], false);
 		frm.toggle_display(['submit3'], true);
+		document.querySelectorAll("[data-fieldname='queries_received']")[0].style.backgroundColor ="white";
 		}
 		var assessment = frm.doc.assessment;
-		if (assessment === 'Yes') {
+		if (assessment) {
 		frm.toggle_display(['submit4'], false);
 		frm.toggle_display(['revert4'], true);
+		document.querySelectorAll("[data-fieldname='assessment']")[0].style.backgroundColor ="#d3f8d3";
+
+
 		} else {
 		frm.toggle_display(['revert4'], false);
 		frm.toggle_display(['submit4'], true);
+		document.querySelectorAll("[data-fieldname='assessment']")[0].style.backgroundColor ="white";
+
 		}
 		var login = frm.doc.login;
-		if (login === 'Yes') {
+		if (login) {
 		frm.toggle_display(['submit5'], false);
 		frm.toggle_display(['revert5'], true);
+		document.querySelectorAll("[data-fieldname='login']")[0].style.backgroundColor ="#d3f8d3";
+
 		} else {
 		frm.toggle_display(['revert5'], false);
 		frm.toggle_display(['submit5'], true);
+		document.querySelectorAll("[data-fieldname='login']")[0].style.backgroundColor ="white";
+
 		}
 		var bank_login_queries = frm.doc.bank_login_queries;
-		if (bank_login_queries === 'Yes') {
+		if (bank_login_queries) {
 		frm.toggle_display(['submit6'], false);
 		frm.toggle_display(['revert6'], true);
+		document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.backgroundColor ="#d3f8d3";
+
 		} else {
 		frm.toggle_display(['revert6'], false);
 		frm.toggle_display(['submit6'], true);
+		document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.backgroundColor ="white";
+
+
 		}
 		var login_completion = frm.doc.login_completion;
-		if (login_completion === 'Yes') {
+		if (login_completion) {
 		frm.toggle_display(['submit7'], false);
 		frm.toggle_display(['revert7'], true);
+		document.querySelectorAll("[data-fieldname='login_completion']")[0].style.backgroundColor ="#d3f8d3";
+
 		} else {
 		frm.toggle_display(['revert7'], false);
 		frm.toggle_display(['submit7'], true);
+		document.querySelectorAll("[data-fieldname='login_completion']")[0].style.backgroundColor ="white";
+
 		}
 		var credit_queries = frm.doc.credit_queries;
-		if (credit_queries === 'Yes') {
+		if (credit_queries) {
 		frm.toggle_display(['submit8'], false);
 		frm.toggle_display(['revert8'], true);
+		document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.backgroundColor ="#d3f8d3";
+
 		} else {
 		frm.toggle_display(['revert8'], false);
 		frm.toggle_display(['submit8'], true);
+		document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.backgroundColor ="white";
+
 		}
 		var sanction = frm.doc.sanction;
-		if (sanction === 'Yes') {
+		if (sanction) {
 		frm.toggle_display(['submit9'], false);
 		frm.toggle_display(['revert9'], true);
+		document.querySelectorAll("[data-fieldname='sanction']")[0].style.backgroundColor ="#d3f8d3";
+
 		} else {
 		frm.toggle_display(['revert9'], false);
 		frm.toggle_display(['submit9'], true);
+		document.querySelectorAll("[data-fieldname='sanction']")[0].style.backgroundColor ="white";
+
 		}
 		var technical_assessment = frm.doc.technical_assessment;
-		if (technical_assessment === 'Yes') {
+		if (technical_assessment) {
 		frm.toggle_display(['submit10'], false);
 		frm.toggle_display(['revert10'], true);
+		document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.backgroundColor ="#d3f8d3";
+
 		} else {
 		frm.toggle_display(['revert10'], false);
 		frm.toggle_display(['submit10'], true);
+		document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.backgroundColor ="white";
+
 		}
 		var legel_assessment = frm.doc.legel_assessment;
-		if (legel_assessment === 'Yes') {
+		if (legel_assessment) {
 		frm.toggle_display(['submit11'], false);
 		frm.toggle_display(['revert11'], true);
+		document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.backgroundColor ="#d3f8d3";
+
 		} else {
 		frm.toggle_display(['revert11'], false);
 		frm.toggle_display(['submit11'], true);
+		document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.backgroundColor ="white";
+
 		}
 		var ops = frm.doc.ops;
-		if (ops === 'Yes') {
+		if (ops) {
 		frm.toggle_display(['submit12'], false);
 		frm.toggle_display(['revert12'], true);
+		document.querySelectorAll("[data-fieldname='ops']")[0].style.backgroundColor ="#d3f8d3";
+
 		} else {
 		frm.toggle_display(['revert12'], false);
 		frm.toggle_display(['submit12'], true);
+		document.querySelectorAll("[data-fieldname='ops']")[0].style.backgroundColor ="white";
+
 		}
 		var docket = frm.doc.docket;
-		if (docket === 'Yes') {
+		if (docket) {
 		frm.toggle_display(['submit13'], false);
 		frm.toggle_display(['revert13'], true);
+		document.querySelectorAll("[data-fieldname='docket']")[0].style.backgroundColor ="#d3f8d3";
+
 		} else {
 		frm.toggle_display(['revert13'], false);
 		frm.toggle_display(['submit13'], true);
+		document.querySelectorAll("[data-fieldname='docket']")[0].style.backgroundColor ="white";
+
 		}
 		var disbursement = frm.doc.disbursement;
-		if (disbursement === 'Yes') {
+		if (disbursement) {
 		frm.toggle_display(['submit14'], false);
 		frm.toggle_display(['revert14'], true);
+		document.querySelectorAll("[data-fieldname='disbursement']")[0].style.backgroundColor ="#d3f8d3";
+
 		} else {
 		frm.toggle_display(['revert14'], false);
 		frm.toggle_display(['submit14'], true);
+		document.querySelectorAll("[data-fieldname='disbursement']")[0].style.backgroundColor ="white";
+
 		}
 		var cheques_handover = frm.doc.cheques_handover;
-		if (cheques_handover === 'Yes') {
+		if (cheques_handover) {
 		frm.toggle_display(['submit15'], false);
 		frm.toggle_display(['revert15'], true);
+		document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.backgroundColor ="#d3f8d3";
+
 		} else {
 		frm.toggle_display(['revert15'], false);
 		frm.toggle_display(['submit15'], true);
-		}	
+		document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.backgroundColor ="white";
+
+		}
 			
         } else {
             frm.toggle_display(['revert'], false);
@@ -236,8 +392,7 @@ frappe.ui.form.on('Custom Crm', {
 	submit:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-			frm.set_value("file_discussion", "Yes");
-			document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.backgroundColor = "green";
+			frm.set_value("file_discussion", 1);
 			frm.refresh_field("file_discussion");
 			frm.save("Update");
 		 }, () => {
@@ -246,8 +401,7 @@ frappe.ui.form.on('Custom Crm', {
     revert: function(frm) {
 		frappe.confirm('Are you sure you want to proceed?',
 		() => {
-        frm.set_value("file_discussion", "No");
-        document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.backgroundColor = "white";
+        frm.set_value("file_discussion", 0);
         frm.refresh_field("file_discussion");
         frm.save("Update");
 		}, () => {
@@ -257,8 +411,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit1:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("documents_received","Yes")
-		document.querySelectorAll("[data-fieldname='documents_received']")[0].style.backgroundColor ="green";
+		frm.set_value("documents_received",1)
+//		document.querySelectorAll("[data-fieldname='documents_received']")[0].style.backgroundColor ="#d3f8d3";
 		frm.refresh_field("documents_received")
 		frm.save("Update")
 		}, () => {
@@ -268,8 +422,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert1:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("documents_received","No")
-		document.querySelectorAll("[data-fieldname='documents_received']")[0].style.backgroundColor ="white";
+		frm.set_value("documents_received",0)
+//		document.querySelectorAll("[data-fieldname='documents_received']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("documents_received")
 		frm.save("Update")
@@ -279,8 +433,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit2:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("our_queries_given","Yes")
-		document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.backgroundColor ="green";
+		frm.set_value("our_queries_given",1)
+//		document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.backgroundColor ="abf2ab";
 		frm.refresh_field("our_queries_given")
 		frm.save("Update")
 		}, () => {
@@ -290,9 +444,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert2:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("our_queries_given","No")
-		document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.backgroundColor ="white";
-
+		frm.set_value("our_queries_given",0)
+//		document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.backgroundColor ="white";
 		frm.refresh_field("our_queries_given")
 		frm.save("Update")
 		}, () => {
@@ -301,8 +454,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit3:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("queries_received","Yes")
-		document.querySelectorAll("[data-fieldname='queries_received']")[0].style.backgroundColor ="green";
+		frm.set_value("queries_received",1)
+//		document.querySelectorAll("[data-fieldname='queries_received']")[0].style.backgroundColor ="abf2ab";
 		frm.refresh_field("queries_received")
 		frm.save("Update")
 		}, () => {
@@ -312,8 +465,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert3:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("queries_received","No")
-		document.querySelectorAll("[data-fieldname='queries_received']")[0].style.backgroundColor ="white";
+		frm.set_value("queries_received",0)
+//		document.querySelectorAll("[data-fieldname='queries_received']")[0].style.backgroundColor ="white";
 		frm.refresh_field("queries_received")
 		frm.save("Update")
 		}, () => {
@@ -323,7 +476,7 @@ frappe.ui.form.on('Custom Crm', {
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
 		frm.set_value("assessment","Yes")
-		document.querySelectorAll("[data-fieldname='assessment']")[0].style.backgroundColor ="green";
+//		document.querySelectorAll("[data-fieldname='assessment']")[0].style.backgroundColor ="green";
 		frm.refresh_field("assessment")
 		frm.save("Update")
 		}, () => {
@@ -333,8 +486,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert4:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("assessment","No")
-		document.querySelectorAll("[data-fieldname='assessment']")[0].style.backgroundColor ="white";
+		frm.set_value("assessment",0)
+//		document.querySelectorAll("[data-fieldname='assessment']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("assessment")
 		frm.save("Update")
@@ -344,8 +497,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit5:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("login","Yes")
-		document.querySelectorAll("[data-fieldname='login']")[0].style.backgroundColor ="green";
+		frm.set_value("login",1)
+//		document.querySelectorAll("[data-fieldname='login']")[0].style.backgroundColor ="green";
 		frm.refresh_field("login")
 		frm.save("Update")
 		}, () => {
@@ -355,8 +508,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert5:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("login","No")
-		document.querySelectorAll("[data-fieldname='login']")[0].style.backgroundColor ="white";
+		frm.set_value("login",0)
+//		document.querySelectorAll("[data-fieldname='login']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("login")
 		frm.save("Update")
@@ -366,8 +519,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit6:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("bank_login_queries","Yes")
-		document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.backgroundColor ="green";
+		frm.set_value("bank_login_queries",1)
+//		document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.backgroundColor ="green";
 		frm.refresh_field("bank_login_queries")
 		frm.save("Update")
 		}, () => {
@@ -377,8 +530,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert6:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("bank_login_queries","No")
-		document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.backgroundColor ="white";
+		frm.set_value("bank_login_queries",0)
+//		document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("bank_login_queries")
 		frm.save("Update")
@@ -388,8 +541,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit7:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("login_completion","Yes")
-		document.querySelectorAll("[data-fieldname='login_completion']")[0].style.backgroundColor ="green";
+		frm.set_value("login_completion",1)
+//		document.querySelectorAll("[data-fieldname='login_completion']")[0].style.backgroundColor ="green";
 		frm.refresh_field("login_completion")
 		frm.save("Update")
 		}, () => {
@@ -399,8 +552,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert7:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("login_completion","No")
-		document.querySelectorAll("[data-fieldname='login_completion']")[0].style.backgroundColor ="white";
+		frm.set_value("login_completion",0)
+//		document.querySelectorAll("[data-fieldname='login_completion']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("login_completion")
 		frm.save("Update")
@@ -410,8 +563,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit8:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("credit_queries","Yes")
-		document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.backgroundColor ="green";
+		frm.set_value("credit_queries",1)
+//		document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.backgroundColor ="green";
 		frm.refresh_field("credit_queries")
 		frm.save("Update")
 		}, () => {
@@ -421,8 +574,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert8:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("credit_queries","No")
-		document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.backgroundColor ="white";
+		frm.set_value("credit_queries",0)
+//		document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("credit_queries")
 		frm.save("Update")
@@ -432,8 +585,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit9:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("sanction","Yes")
-		document.querySelectorAll("[data-fieldname='sanction']")[0].style.backgroundColor ="green";
+		frm.set_value("sanction",1)
+//		document.querySelectorAll("[data-fieldname='sanction']")[0].style.backgroundColor ="green";
 		frm.refresh_field("sanction")
 		frm.save("Update")
 		}, () => {
@@ -443,8 +596,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert9:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("sanction","No")
-		document.querySelectorAll("[data-fieldname='sanction']")[0].style.backgroundColor ="white";
+		frm.set_value("sanction",0)
+//		document.querySelectorAll("[data-fieldname='sanction']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("sanction")
 		frm.save("Update")
@@ -454,8 +607,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit10:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("technical_assessment","Yes")
-		document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.backgroundColor ="green";
+		frm.set_value("technical_assessment",1)
+//		document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.backgroundColor ="green";
 		frm.refresh_field("technical_assessment")
 		frm.save("Update")
 		}, () => {
@@ -465,8 +618,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert10:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("technical_assessment","No")
-		document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.backgroundColor ="white";
+		frm.set_value("technical_assessment",0)
+//		document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("technical_assessment")
 		frm.save("Update")
@@ -476,8 +629,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit11:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("legel_assessment","Yes")
-		document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.backgroundColor ="green";
+		frm.set_value("legel_assessment",1)
+//		document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.backgroundColor ="green";
 		frm.refresh_field("legel_assessment")
 		frm.save("Update")
 		}, () => {
@@ -487,8 +640,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert11:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("legel_assessment","No")
-		document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.backgroundColor ="white";
+		frm.set_value("legel_assessment",0)
+//		document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("legel_assessment")
 		frm.save("Update")
@@ -498,8 +651,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit12:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("ops","Yes")
-		document.querySelectorAll("[data-fieldname='ops']")[0].style.backgroundColor ="green";
+		frm.set_value("ops",1)
+//		document.querySelectorAll("[data-fieldname='ops']")[0].style.backgroundColor ="green";
 		frm.refresh_field("ops")
 		frm.save("Update")
 		}, () => {
@@ -509,8 +662,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert12:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("ops","No")
-		document.querySelectorAll("[data-fieldname='ops']")[0].style.backgroundColor ="white";
+		frm.set_value("ops",0)
+//		document.querySelectorAll("[data-fieldname='ops']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("ops")
 		frm.save("Update")
@@ -520,8 +673,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit13:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("docket","Yes")
-		document.querySelectorAll("[data-fieldname='docket']")[0].style.backgroundColor ="green";
+		frm.set_value("docket",1)
+//		document.querySelectorAll("[data-fieldname='docket']")[0].style.backgroundColor ="green";
 		frm.refresh_field("docket")
 		frm.save("Update")
 		}, () => {
@@ -531,8 +684,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert13:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("docket","No")
-		document.querySelectorAll("[data-fieldname='docket']")[0].style.backgroundColor ="white";
+		frm.set_value("docket",0)
+//		document.querySelectorAll("[data-fieldname='docket']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("docket")
 		frm.save("Update")
@@ -542,8 +695,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit14:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("disbursement","Yes")
-		document.querySelectorAll("[data-fieldname='disbursement']")[0].style.backgroundColor ="green";
+		frm.set_value("disbursement",1)
+//		document.querySelectorAll("[data-fieldname='disbursement']")[0].style.backgroundColor ="green";
 		frm.refresh_field("disbursement")
 		frm.save("Update")
 		}, () => {
@@ -553,8 +706,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert14:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("disbursement","No")
-		document.querySelectorAll("[data-fieldname='disbursement']")[0].style.backgroundColor ="white";
+		frm.set_value("disbursement",0)
+//		document.querySelectorAll("[data-fieldname='disbursement']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("disbursement")
 		frm.save("Update")
@@ -564,8 +717,8 @@ frappe.ui.form.on('Custom Crm', {
 	submit15:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("cheques_handover","Yes")
-		document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.backgroundColor ="green";
+		frm.set_value("cheques_handover",1)
+//		document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.backgroundColor ="green";
 		frm.refresh_field("cheques_handover")
 		frm.save("Update")
 		}, () => {
@@ -575,8 +728,8 @@ frappe.ui.form.on('Custom Crm', {
 	revert15:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("cheques_handover","No")
-		document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.backgroundColor ="white";
+		frm.set_value("cheques_handover",0)
+//		document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.backgroundColor ="white";
 
 		frm.refresh_field("cheques_handover")
 		frm.save("Update")
