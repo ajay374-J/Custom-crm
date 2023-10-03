@@ -232,6 +232,7 @@
    "allow_on_submit": 1,
    "fieldname": "status_history",
    "fieldtype": "Text Editor",
+   "hidden": 1,
    "label": "Status History",
    "read_only": 1
   },
@@ -788,7 +789,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-03 08:13:23.274911",
+ "modified": "2023-10-03 11:21:13.392464",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",
