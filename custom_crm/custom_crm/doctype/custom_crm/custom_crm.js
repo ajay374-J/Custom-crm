@@ -753,178 +753,178 @@ frappe.ui.form.on('Custom Crm', {
 	},
 	submit:function(frm){
 		frm.set_value("file_discussion","Yes")
-		frm.refresh("file_discussion")
+		frm.refresh_field("file_discussion")
 		frm.save("Update")
 
 	},
 	revert:function(frm){
 		frm.set_value("file_discussion","No")
-		frm.refresh("file_discussion")
+		frm.refresh_field("file_discussion")
 		frm.save("Update")
 	},
 	submit1:function(frm){
 		frm.set_value("documents_received","Yes")
-		frm.refresh("documents_received")
+		frm.refresh_field("documents_received")
 		frm.save("Update")
 
 	},
 	revert1:function(frm){
 		frm.set_value("documents_received","No")
-		frm.refresh("documents_received")
+		frm.refresh_field("documents_received")
 		frm.save("Update")
 	},
 	submit2:function(frm){
 		frm.set_value("our_queries_given","Yes")
-		frm.refresh("our_queries_given")
+		frm.refresh_field("our_queries_given")
 		frm.save("Update")
 
 	},
 	revert2:function(frm){
 		frm.set_value("our_queries_given","No")
-		frm.refresh("our_queries_given")
+		frm.refresh_field("our_queries_given")
 		frm.save("Update")
 	},
 	submit3:function(frm){
 		frm.set_value("queries_received","Yes")
-		frm.refresh("queries_received")
+		frm.refresh_field("queries_received")
 		frm.save("Update")
 
 	},
 	revert3:function(frm){
 		frm.set_value("queries_received","No")
-		frm.refresh("queries_received")
+		frm.refresh_field("queries_received")
 		frm.save("Update")
 	},
 	submit4:function(frm){
 		frm.set_value("assessment","Yes")
-		frm.refresh("assessment")
+		frm.refresh_field("assessment")
 		frm.save("Update")
 
 	},
 	revert4:function(frm){
 		frm.set_value("assessment","No")
-		frm.refresh("assessment")
+		frm.refresh_field("assessment")
 		frm.save("Update")
 	},
 	submit5:function(frm){
 		frm.set_value("login","Yes")
-		frm.refresh("login")
+		frm.refresh_field("login")
 		frm.save("Update")
 
 	},
 	revert5:function(frm){
 		frm.set_value("login","No")
-		frm.refresh("login")
+		frm.refresh_field("login")
 		frm.save("Update")
 	},
 	submit6:function(frm){
 		frm.set_value("bank_login_queries","Yes")
-		frm.refresh("bank_login_queries")
+		frm.refresh_field("bank_login_queries")
 		frm.save("Update")
 
 	},
 	revert6:function(frm){
 		frm.set_value("bank_login_queries","No")
-		frm.refresh("bank_login_queries")
+		frm.refresh_field("bank_login_queries")
 		frm.save("Update")
 	},
 	submit7:function(frm){
 		frm.set_value("login_completion","Yes")
-		frm.refresh("login_completion")
+		frm.refresh_field("login_completion")
 		frm.save("Update")
 
 	},
 	revert7:function(frm){
 		frm.set_value("login_completion","No")
-		frm.refresh("login_completion")
+		frm.refresh_field("login_completion")
 		frm.save("Update")
 	},
 	submit8:function(frm){
 		frm.set_value("credit_queries","Yes")
-		frm.refresh("credit_queries")
+		frm.refresh_field("credit_queries")
 		frm.save("Update")
 
 	},
 	revert8:function(frm){
 		frm.set_value("credit_queries","No")
-		frm.refresh("credit_queries")
+		frm.refresh_field("credit_queries")
 		frm.save("Update")
 	},
 	submit9:function(frm){
 		frm.set_value("sanction","Yes")
-		frm.refresh("sanction")
+		frm.refresh_field("sanction")
 		frm.save("Update")
 
 	},
 	revert9:function(frm){
 		frm.set_value("sanction","No")
-		frm.refresh("sanction")
+		frm.refresh_field("sanction")
 		frm.save("Update")
 	},
 	submit10:function(frm){
 		frm.set_value("technical_assessment","Yes")
-		frm.refresh("technical_assessment")
+		frm.refresh_field("technical_assessment")
 		frm.save("Update")
 
 	},
 	revert10:function(frm){
 		frm.set_value("technical_assessment","No")
-		frm.refresh("technical_assessment")
+		frm.refresh_field("technical_assessment")
 		frm.save("Update")
 	},
 	submit11:function(frm){
 		frm.set_value("legel_assessment","Yes")
-		frm.refresh("legel_assessment")
+		frm.refresh_field("legel_assessment")
 		frm.save("Update")
 
 	},
 	revert11:function(frm){
 		frm.set_value("legel_assessment","No")
-		frm.refresh("legel_assessment")
+		frm.refresh_field("legel_assessment")
 		frm.save("Update")
 	},
 	submit12:function(frm){
 		frm.set_value("ops","Yes")
-		frm.refresh("ops")
+		frm.refresh_field("ops")
 		frm.save("Update")
 
 	},
 	revert12:function(frm){
 		frm.set_value("ops","No")
-		frm.refresh("ops")
+		frm.refresh_field("ops")
 		frm.save("Update")
 	},
 	submit13:function(frm){
 		frm.set_value("docket","Yes")
-		frm.refresh("docket")
+		frm.refresh_field("docket")
 		frm.save("Update")
 
 	},
 	revert13:function(frm){
 		frm.set_value("docket","No")
-		frm.refresh("docket")
+		frm.refresh_field("docket")
 		frm.save("Update")
 	},
 	submit14:function(frm){
 		frm.set_value("disbursement","Yes")
-		frm.refresh("disbursement")
+		frm.refresh_field("disbursement")
 		frm.save("Update")
 
 	},
 	revert14:function(frm){
 		frm.set_value("disbursement","No")
-		frm.refresh("disbursement")
+		frm.refresh_field("disbursement")
 		frm.save("Update")
 	},
 	submit15:function(frm){
 		frm.set_value("cheques_handover","Yes")
-		frm.refresh("cheques_handover")
+		frm.refresh_field("cheques_handover")
 		frm.save("Update")
 
 	},
 	revert15:function(frm){
 		frm.set_value("cheques_handover","No")
-		frm.refresh("cheques_handover")
+		frm.refresh_field("cheques_handover")
 		frm.save("Update")
 	}
 });
