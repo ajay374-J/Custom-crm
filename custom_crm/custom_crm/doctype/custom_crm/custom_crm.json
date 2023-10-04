@@ -35,10 +35,10 @@
   "our_queries_given",
   "queries_received",
   "assessment",
-  "bank_login_queries",
-  "login_completion",
-  "credit_queries",
   "login",
+  "bank_login_queries",
+  "credit_queries",
+  "login_completion",
   "sanction",
   "technical_assessment",
   "legel_assessment",
@@ -172,7 +172,7 @@
    "print_hide": 1,
    "read_only": 1
   },
-  {
+    {
    "allow_on_submit": 1,
    "fieldname": "state",
    "fieldtype": "Table",
@@ -549,7 +549,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-04 00:45:07.659337",
+ "modified": "2023-10-04 16:30:45.466568",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",

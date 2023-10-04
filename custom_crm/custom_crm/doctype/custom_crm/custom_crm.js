@@ -382,6 +382,22 @@ frappe.ui.form.on('Custom Crm', {
 			frm.toggle_display(['revert13'], false);
 			frm.toggle_display(['revert14'], false);
 			frm.toggle_display(['revert15'], false);
+			document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.backgroundColor = "white";
+			document.querySelectorAll("[data-fieldname='documents_received']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='queries_received']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='assessment']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='login']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='login_completion']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='sanction']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='ops']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='docket']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='disbursement']")[0].style.backgroundColor ="white";
+			document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.backgroundColor ="white";
 
 
 
@@ -390,13 +406,23 @@ frappe.ui.form.on('Custom Crm', {
     },
 	
 	submit:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-			frm.set_value("file_discussion", 1);
-			frm.refresh_field("file_discussion");
-			frm.save("Update");
-		 }, () => {
-		 })
+		// frm.doc.__islocal checks if the document is a new, unsaved document.
+		//  If it's not a new document (__islocal is false), it will proceed with the confirmation dialog.
+		// If it's a new document, it will display a message asking the user to save or submit the document first.
+		if (!frm.doc.__islocal) { 
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("file_discussion", 1);
+					frm.refresh_field("file_discussion");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 	},
     revert: function(frm) {
 		frappe.confirm('Are you sure you want to proceed?',
@@ -409,14 +435,20 @@ frappe.ui.form.on('Custom Crm', {
     
     },
 	submit1:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("documents_received",1)
-//		document.querySelectorAll("[data-fieldname='documents_received']")[0].style.backgroundColor ="#d3f8d3";
-		frm.refresh_field("documents_received")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("documents_received", 1);
+					frm.refresh_field("documents_received");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert1:function(frm){
@@ -431,14 +463,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit2:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("our_queries_given",1)
-//		document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.backgroundColor ="abf2ab";
-		frm.refresh_field("our_queries_given")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("our_queries_given", 1);
+					frm.refresh_field("our_queries_given");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert2:function(frm){
@@ -452,14 +490,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit3:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("queries_received",1)
-//		document.querySelectorAll("[data-fieldname='queries_received']")[0].style.backgroundColor ="abf2ab";
-		frm.refresh_field("queries_received")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("queries_received", 1);
+					frm.refresh_field("queries_received");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert3:function(frm){
@@ -473,14 +517,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit4:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("assessment","Yes")
-//		document.querySelectorAll("[data-fieldname='assessment']")[0].style.backgroundColor ="green";
-		frm.refresh_field("assessment")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("assessment", 1);
+					frm.refresh_field("assessment");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert4:function(frm){
@@ -495,14 +545,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit5:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("login",1)
-//		document.querySelectorAll("[data-fieldname='login']")[0].style.backgroundColor ="green";
-		frm.refresh_field("login")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("login", 1);
+					frm.refresh_field("login");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert5:function(frm){
@@ -517,14 +573,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit6:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("bank_login_queries",1)
-//		document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.backgroundColor ="green";
-		frm.refresh_field("bank_login_queries")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("bank_login_queries", 1);
+					frm.refresh_field("bank_login_queries");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert6:function(frm){
@@ -539,14 +601,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit7:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("login_completion",1)
-//		document.querySelectorAll("[data-fieldname='login_completion']")[0].style.backgroundColor ="green";
-		frm.refresh_field("login_completion")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("login_completion", 1);
+					frm.refresh_field("login_completion");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert7:function(frm){
@@ -561,14 +629,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit8:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("credit_queries",1)
-//		document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.backgroundColor ="green";
-		frm.refresh_field("credit_queries")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("credit_queries", 1);
+					frm.refresh_field("credit_queries");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert8:function(frm){
@@ -583,14 +657,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit9:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("sanction",1)
-//		document.querySelectorAll("[data-fieldname='sanction']")[0].style.backgroundColor ="green";
-		frm.refresh_field("sanction")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("sanction", 1);
+					frm.refresh_field("sanction");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert9:function(frm){
@@ -605,14 +685,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit10:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("technical_assessment",1)
-//		document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.backgroundColor ="green";
-		frm.refresh_field("technical_assessment")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("technical_assessment", 1);
+					frm.refresh_field("technical_assessment");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert10:function(frm){
@@ -627,14 +713,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit11:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("legel_assessment",1)
-//		document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.backgroundColor ="green";
-		frm.refresh_field("legel_assessment")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("legel_assessment", 1);
+					frm.refresh_field("legel_assessment");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert11:function(frm){
@@ -649,14 +741,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit12:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("ops",1)
-//		document.querySelectorAll("[data-fieldname='ops']")[0].style.backgroundColor ="green";
-		frm.refresh_field("ops")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("ops", 1);
+					frm.refresh_field("ops");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert12:function(frm){
@@ -671,14 +769,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit13:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("docket",1)
-//		document.querySelectorAll("[data-fieldname='docket']")[0].style.backgroundColor ="green";
-		frm.refresh_field("docket")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("docket", 1);
+					frm.refresh_field("docket");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert13:function(frm){
@@ -693,14 +797,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit14:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("disbursement",1)
-//		document.querySelectorAll("[data-fieldname='disbursement']")[0].style.backgroundColor ="green";
-		frm.refresh_field("disbursement")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("disbursement", 1);
+					frm.refresh_field("disbursement");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert14:function(frm){
@@ -715,14 +825,20 @@ frappe.ui.form.on('Custom Crm', {
 		})
 	},
 	submit15:function(frm){
-		frappe.confirm('Are you sure you want to proceed?',
-		 () => {
-		frm.set_value("cheques_handover",1)
-//		document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.backgroundColor ="green";
-		frm.refresh_field("cheques_handover")
-		frm.save("Update")
-		}, () => {
-		})
+		if (!frm.doc.__islocal) {
+			frappe.confirm('Are you sure you want to proceed?',
+				() => {
+					frm.set_value("cheques_handover", 1);
+					frm.refresh_field("cheques_handover");
+					frm.save("Update");
+				},
+				() => {
+					// Do nothing if user cancels
+				}
+			);
+		} else {
+			frappe.msgprint("Please save or submit the document first.");
+		}
 
 	},
 	revert15:function(frm){
