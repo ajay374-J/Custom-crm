@@ -412,9 +412,20 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) { 
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("file_discussion", 1);
-					frm.refresh_field("file_discussion");
-					frm.save("Update");
+					frappe.call({
+						method: "submit_file_discussion",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							// frm.refresh_field("file_discussion")
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
+					
 				},
 				() => {
 					// Do nothing if user cancels
@@ -427,9 +438,18 @@ frappe.ui.form.on('Custom Crm', {
     revert: function(frm) {
 		frappe.confirm('Are you sure you want to proceed?',
 		() => {
-        frm.set_value("file_discussion", 0);
-        frm.refresh_field("file_discussion");
-        frm.save("Update");
+			frappe.call({
+				method: "revert_file_discussion",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
     
@@ -438,9 +458,19 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("documents_received", 1);
-					frm.refresh_field("documents_received");
-					frm.save("Update");
+					
+					frappe.call({
+						method: "submit_documents_received",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -454,11 +484,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert1:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("documents_received",0)
-//		document.querySelectorAll("[data-fieldname='documents_received']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("documents_received")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_documents_received",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -466,9 +503,18 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("our_queries_given", 1);
-					frm.refresh_field("our_queries_given");
-					frm.save("Update");
+					frappe.call({
+						method: "submit_our_queries_given",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -482,10 +528,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert2:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("our_queries_given",0)
-//		document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.backgroundColor ="white";
-		frm.refresh_field("our_queries_given")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_our_queries_given",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -493,9 +547,19 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("queries_received", 1);
-					frm.refresh_field("queries_received");
-					frm.save("Update");
+					
+					frappe.call({
+						method: "submit_queries_received",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -509,10 +573,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert3:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("queries_received",0)
-//		document.querySelectorAll("[data-fieldname='queries_received']")[0].style.backgroundColor ="white";
-		frm.refresh_field("queries_received")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_queries_received",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -520,9 +592,18 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("assessment", 1);
-					frm.refresh_field("assessment");
-					frm.save("Update");
+					frappe.call({
+						method: "submit_assessment",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -536,11 +617,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert4:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("assessment",0)
-//		document.querySelectorAll("[data-fieldname='assessment']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("assessment")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_assessment",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -548,9 +636,18 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("login", 1);
-					frm.refresh_field("login");
-					frm.save("Update");
+					frappe.call({
+						method: "submit_login",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -564,11 +661,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert5:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("login",0)
-//		document.querySelectorAll("[data-fieldname='login']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("login")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_login",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -576,9 +680,19 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("bank_login_queries", 1);
-					frm.refresh_field("bank_login_queries");
-					frm.save("Update");
+					
+					frappe.call({
+						method: "submit_bank_login_queries",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -592,11 +706,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert6:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("bank_login_queries",0)
-//		document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("bank_login_queries")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_bank_login_queries",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -604,9 +725,19 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("login_completion", 1);
-					frm.refresh_field("login_completion");
-					frm.save("Update");
+					
+					frappe.call({
+						method: "submit_login_completion",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -620,11 +751,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert7:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("login_completion",0)
-//		document.querySelectorAll("[data-fieldname='login_completion']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("login_completion")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_login_completion",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -632,9 +770,19 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("credit_queries", 1);
-					frm.refresh_field("credit_queries");
-					frm.save("Update");
+			
+					frappe.call({
+						method: "submit_credit_queries",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -648,11 +796,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert8:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("credit_queries",0)
-//		document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("credit_queries")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_credit_queries",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -660,9 +815,18 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("sanction", 1);
-					frm.refresh_field("sanction");
-					frm.save("Update");
+					frappe.call({
+						method: "submit_sanction",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -676,11 +840,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert9:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("sanction",0)
-//		document.querySelectorAll("[data-fieldname='sanction']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("sanction")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_sanction",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -688,9 +859,19 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("technical_assessment", 1);
-					frm.refresh_field("technical_assessment");
-					frm.save("Update");
+					
+					frappe.call({
+						method: "submit_technical_assessment",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -704,11 +885,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert10:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("technical_assessment",0)
-//		document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("technical_assessment")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_technical_assessment",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -716,9 +904,18 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("legel_assessment", 1);
-					frm.refresh_field("legel_assessment");
-					frm.save("Update");
+					frappe.call({
+						method: "submit_legel_assessment",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -732,11 +929,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert11:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("legel_assessment",0)
-//		document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("legel_assessment")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_legel_assessment",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -744,9 +948,18 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("ops", 1);
-					frm.refresh_field("ops");
-					frm.save("Update");
+					frappe.call({
+						method: "submit_ops",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -760,11 +973,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert12:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("ops",0)
-//		document.querySelectorAll("[data-fieldname='ops']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("ops")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_ops",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -772,9 +992,18 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("docket", 1);
-					frm.refresh_field("docket");
-					frm.save("Update");
+					frappe.call({
+						method: "submit_docket",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -788,11 +1017,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert13:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("docket",0)
-//		document.querySelectorAll("[data-fieldname='docket']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("docket")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_docket",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -800,9 +1036,19 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("disbursement", 1);
-					frm.refresh_field("disbursement");
-					frm.save("Update");
+					
+					frappe.call({
+						method: "submit_disbursement",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -816,11 +1062,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert14:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("disbursement",0)
-//		document.querySelectorAll("[data-fieldname='disbursement']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("disbursement")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_disbursement",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	},
@@ -828,9 +1081,19 @@ frappe.ui.form.on('Custom Crm', {
 		if (!frm.doc.__islocal) {
 			frappe.confirm('Are you sure you want to proceed?',
 				() => {
-					frm.set_value("cheques_handover", 1);
-					frm.refresh_field("cheques_handover");
-					frm.save("Update");
+					
+					frappe.call({
+						method: "submit_cheques_handover",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+							frm.set_value("status", r.message);
+							frm.refresh();
+							frm.save("Update");
+							}
+			
+						}
+					})
 				},
 				() => {
 					// Do nothing if user cancels
@@ -844,11 +1107,18 @@ frappe.ui.form.on('Custom Crm', {
 	revert15:function(frm){
 		frappe.confirm('Are you sure you want to proceed?',
 		 () => {
-		frm.set_value("cheques_handover",0)
-//		document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.backgroundColor ="white";
-
-		frm.refresh_field("cheques_handover")
-		frm.save("Update")
+			frappe.call({
+				method: "revert_cheques_handover",
+				doc:frm.doc,
+				callback: function(r){
+					if(r.message){
+					frm.set_value("status", r.message);
+					frm.refresh();
+					frm.save("Update");
+					}
+	
+				}
+			})
 		}, () => {
 		})
 	}

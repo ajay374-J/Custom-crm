@@ -229,3 +229,441 @@ class CustomCrm(Document):
 			"state":"Cheques Handover",
 
 		})
+
+
+	@frappe.whitelist()
+	def submit_file_discussion(self):
+		status="Draft"
+		if self.file_discussion==0:
+			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			self.db_set("file_discussion",1)
+			for j in self.state:
+				if j.state=="File Discussion":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status	
+	@frappe.whitelist()
+	def revert_file_discussion(self):
+		status="Draft"
+		if self.file_discussion==1:
+			self.db_set("file_discussion",0)
+			for j in self.state:
+				if j.state=="File Discussion":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+	@frappe.whitelist()
+	def submit_documents_received(self):
+		status="Draft"
+		if self.documents_received==0:
+			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			self.db_set("documents_received",1)
+			for j in self.state:
+				if j.state=="Documents Received":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_documents_received(self):
+		status="Draft"
+		if self.documents_received==1:
+			self.db_set("documents_received",0)
+			for j in self.state:
+				if j.state=="Documents Received":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+
+	@frappe.whitelist()
+	def submit_our_queries_given(self):
+		status="Draft"
+		if self.our_queries_given==0:
+			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			self.db_set("our_queries_given",1)
+			for j in self.state:
+				if j.state=="Our Queries Given":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_our_queries_given(self):
+		status="Draft"
+		if self.our_queries_given==1:
+			self.db_set("our_queries_given",0)
+			for j in self.state:
+				if j.state=="Our Queries Given":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+	@frappe.whitelist()
+	def submit_queries_received(self):
+		status="Draft"
+		if self.queries_received==0:
+			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			self.db_set("queries_received",1)
+			for j in self.state:
+				if j.state=="Queries Received":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_queries_received(self):
+		status="Draft"
+		if self.queries_received==1:
+			self.db_set("queries_received",0)
+			for j in self.state:
+				if j.state=="Queries Received":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+	@frappe.whitelist()
+	def submit_assessment(self):
+		status="Draft"
+		if self.assessment==0:
+			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			self.db_set("assessment",1)
+			for j in self.state:
+				if j.state=="Queries Received":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_assessment(self):
+		status="Draft"
+		if self.assessment==1:
+			self.db_set("assessment",0)
+			for j in self.state:
+				if j.state=="Queries Received":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+
+	@frappe.whitelist()
+	def submit_login(self):
+		status="Draft"
+		if self.login==0:
+			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			self.db_set("login",1)
+			for j in self.state:
+				if j.state=="Login":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_login(self):
+		status="Draft"
+		if self.login==1:
+			self.db_set("login",0)
+			for j in self.state:
+				if j.state=="Login":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+
+
+	@frappe.whitelist()
+	def submit_bank_login_queries(self):
+		status="Draft"
+		if self.bank_login_queries==0:
+			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			self.db_set("bank_login_queries",1)
+			for j in self.state:
+				if j.state=="Bank Login Queries":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_bank_login_queries(self):
+		status="Draft"
+		if self.bank_login_queries==1:
+			self.db_set("bank_login_queries",0)
+			for j in self.state:
+				if j.state=="Bank Login Queries":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+	@frappe.whitelist()
+	def submit_credit_queries(self):
+		status="Draft"
+		if self.credit_queries==0:
+			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			self.db_set("credit_queries",1)
+			for j in self.state:
+				if j.state=="Credit Queries":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_credit_queries(self):
+		status="Draft"
+		if self.credit_queries==1:
+			self.db_set("credit_queries",0)
+			for j in self.state:
+				if j.state=="Credit Queries":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+
+
+	@frappe.whitelist()
+	def submit_login_completion(self):
+		status="Draft"
+	
+		if self.login_completion==0:
+			self.db_set("login_completion",1)
+			for j in self.state:
+				if j.state=="Login Completion":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_login_completion(self):
+		status="Draft"
+		if self.login_completion==1:
+			self.db_set("login_completion",0)
+			for j in self.state:
+				if j.state=="Login Completion":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+
+	@frappe.whitelist()
+	def submit_sanction(self):
+		status="Draft"
+		if self.sanction==0:
+			self.db_set("sanction",1)
+			for j in self.state:
+				if j.state=="Sanction":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_sanction(self):
+		status="Draft"
+		if self.sanction==1:
+			self.db_set("sanction",0)
+			for j in self.state:
+				if j.state=="Sanction":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+	@frappe.whitelist()
+	def submit_technical_assessment(self):
+		status="Draft"
+		if self.technical_assessment==0:
+			self.db_set("technical_assessment",1)
+			for j in self.state:
+				if j.state=="Technical Assessment":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_technical_assessment(self):
+		status="Draft"
+		if self.technical_assessment==1:
+			self.db_set("technical_assessment",0)
+			for j in self.state:
+				if j.state=="Technical Assessment":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+	@frappe.whitelist()
+	def submit_legel_assessment(self):
+		status="Draft"
+		if self.legel_assessment==0:
+			self.db_set("legel_assessment",1)
+			for j in self.state:
+				if j.state=="Legel Assessment":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_legel_assessment(self):
+		status="Draft"
+		if self.legel_assessment==1:
+			self.db_set("legel_assessment",0)
+			for j in self.state:
+				if j.state=="Legel Assessment":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+
+	@frappe.whitelist()
+	def submit_ops(self):
+		status="Draft"
+		if self.ops==0:
+			self.db_set("ops",1)
+			for j in self.state:
+				if j.state=="Ops":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_ops(self):
+		status="Draft"
+		if self.ops==1:
+			self.db_set("ops",0)
+			for j in self.state:
+				if j.state=="Ops":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+
+	@frappe.whitelist()
+	def submit_docket(self):
+		status="Draft"
+		if self.docket==0:
+			self.db_set("docket",1)
+			for j in self.state:
+				if j.state=="Docket":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_docket(self):
+		status="Draft"
+		if self.docket==1:
+			self.db_set("docket",0)
+			for j in self.state:
+				if j.state=="Docket":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+
+	@frappe.whitelist()
+	def submit_docket(self):
+		status="Draft"
+		if self.docket==0:
+			self.db_set("docket",1)
+			for j in self.state:
+				if j.state=="Docket":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_docket(self):
+		status="Draft"
+		if self.docket==1:
+			self.db_set("docket",0)
+			for j in self.state:
+				if j.state=="Docket":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+	@frappe.whitelist()
+	def submit_cheques_handover(self):
+		status="Draft"
+		if self.cheques_handover==0:
+			self.db_set("cheques_handover",1)
+			for j in self.state:
+				if j.state=="Cheques Handover":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_cheques_handover(self):
+		status="Draft"
+		if self.cheques_handover==1:
+			self.db_set("cheques_handover",0)
+			for j in self.state:
+				if j.state=="Cheques Handover":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
+	
+
+
+	@frappe.whitelist()
+	def submit_disbursement(self):
+		status="Draft"
+		if self.disbursement==0:
+			self.db_set("disbursement",1)
+			for j in self.state:
+				if j.state=="Disbursement":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+		return status
+		
+	@frappe.whitelist()
+	def revert_disbursement(self):
+		status="Draft"
+		if self.disbursement==1:
+			self.db_set("disbursement",0)
+			for j in self.state:
+				if j.state=="Disbursement":
+					j.db_set("check",0)
+				if j.check==1:
+					status=j.state
+		return status
