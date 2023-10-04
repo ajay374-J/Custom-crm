@@ -79,97 +79,116 @@ frappe.ui.form.on('Custom Crm', {
 	refresh: function(frm) {
 	            document.querySelectorAll("[data-fieldname='status']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='doc_state']")[0].style.display = "none";
+
+	            document.querySelectorAll("[data-fieldname='file_discussion_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='documents_received_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='our_queries_given_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='queries_received_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='assessment_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='login_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='bank_login_queries_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='login_completion_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='credit_queries_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='sanction_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='technical_assessment_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='legel_assessment_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='ops_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='docket_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='disbursement_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='cheques_handover_state']")[0].style.display = "none";
+
+
 	            document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert']")[1].style.cssText += 'height:22px';
 
                 document.querySelectorAll("[data-fieldname='documents_received']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='documents_received']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit1']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert1']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit1']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert1']")[1].style.cssText += 'height:22px';
 
                 document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit2']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert2']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit2']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert2']")[1].style.cssText += 'height:22px';
 
                 document.querySelectorAll("[data-fieldname='queries_received']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='queries_received']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit3']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert3']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit3']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert3']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='assessment']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='assessment']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit4']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert4']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit4']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert4']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='login']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='login']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit5']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert5']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit5']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert5']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit6']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert6']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit6']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert6']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='login_completion']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='login_completion']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit7']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert7']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit7']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert7']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit8']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert8']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit8']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert8']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='sanction']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='sanction']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit9']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert9']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit9']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert9']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit10']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert10']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit10']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert10']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit11']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert11']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit11']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert11']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='ops']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='ops']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit12']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert12']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit12']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert12']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='docket']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='docket']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit13']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert13']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit13']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert13']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='disbursement']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='disbursement']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit14']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert14']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit14']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert14']")[1].style.cssText += 'height:22px';
 
 
                 document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit15']")[1].style.cssText += 'height:21px';
-		        document.querySelectorAll("[data-fieldname='revert15']")[1].style.cssText += 'height:21px';
+                document.querySelectorAll("[data-fieldname='submit15']")[1].style.cssText += 'height:22px';
+		        document.querySelectorAll("[data-fieldname='revert15']")[1].style.cssText += 'height:22px';
 
 
         if (!frm.doc.__islocal) {
@@ -182,6 +201,9 @@ frappe.ui.form.on('Custom Crm', {
                 frm.toggle_display(['submit'], false);
 				frm.toggle_display(['revert'], true);
                 document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.backgroundColor = "#d3f8d3";
+                document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.borderRadius = "0px 15px 15px 0px";
+                document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.paddingTop = "2px";
+
             } else {
                 frm.toggle_display(['revert'], false);
 				frm.toggle_display(['submit'], true);
@@ -194,6 +216,9 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit1'], false);
 		frm.toggle_display(['revert1'], true);
 		document.querySelectorAll("[data-fieldname='documents_received']")[0].style.backgroundColor ="#d3f8d3";
+        document.querySelectorAll("[data-fieldname='documents_received']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='documents_received']")[0].style.paddingTop = "2px";
+
 		} else {
 		frm.toggle_display(['revert1'], false);
 		frm.toggle_display(['submit1'], true);
@@ -205,6 +230,9 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit2'], false);
 		frm.toggle_display(['revert2'], true);
 		document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.paddingTop = "2px";
+
 		} else {
 		frm.toggle_display(['revert2'], false);
 		frm.toggle_display(['submit2'], true);
@@ -215,6 +243,9 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit3'], false);
 		frm.toggle_display(['revert3'], true);
 		document.querySelectorAll("[data-fieldname='queries_received']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='queries_received']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='queries_received']")[0].style.paddingTop = "2px";
+
 		} else {
 		frm.toggle_display(['revert3'], false);
 		frm.toggle_display(['submit3'], true);
@@ -225,7 +256,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit4'], false);
 		frm.toggle_display(['revert4'], true);
 		document.querySelectorAll("[data-fieldname='assessment']")[0].style.backgroundColor ="#d3f8d3";
-
+                document.querySelectorAll("[data-fieldname='assessment']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='assessment']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert4'], false);
@@ -238,6 +270,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit5'], false);
 		frm.toggle_display(['revert5'], true);
 		document.querySelectorAll("[data-fieldname='login']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='login']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='login']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert5'], false);
@@ -250,6 +284,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit6'], false);
 		frm.toggle_display(['revert6'], true);
 		document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert6'], false);
@@ -263,6 +299,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit7'], false);
 		frm.toggle_display(['revert7'], true);
 		document.querySelectorAll("[data-fieldname='login_completion']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='login_completion']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='login_completion']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert7'], false);
@@ -275,6 +313,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit8'], false);
 		frm.toggle_display(['revert8'], true);
 		document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert8'], false);
@@ -287,6 +327,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit9'], false);
 		frm.toggle_display(['revert9'], true);
 		document.querySelectorAll("[data-fieldname='sanction']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='sanction']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='sanction']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert9'], false);
@@ -299,6 +341,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit10'], false);
 		frm.toggle_display(['revert10'], true);
 		document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert10'], false);
@@ -311,6 +355,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit11'], false);
 		frm.toggle_display(['revert11'], true);
 		document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert11'], false);
@@ -323,6 +369,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit12'], false);
 		frm.toggle_display(['revert12'], true);
 		document.querySelectorAll("[data-fieldname='ops']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='ops']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='ops']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert12'], false);
@@ -335,6 +383,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit13'], false);
 		frm.toggle_display(['revert13'], true);
 		document.querySelectorAll("[data-fieldname='docket']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='docket']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='docket']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert13'], false);
@@ -347,6 +397,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit14'], false);
 		frm.toggle_display(['revert14'], true);
 		document.querySelectorAll("[data-fieldname='disbursement']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='disbursement']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='disbursement']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert14'], false);
@@ -359,6 +411,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['submit15'], false);
 		frm.toggle_display(['revert15'], true);
 		document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.backgroundColor ="#d3f8d3";
+                document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.borderRadius = "0px 15px 15px 0px";
+        document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.paddingTop = "2px";
 
 		} else {
 		frm.toggle_display(['revert15'], false);
@@ -419,7 +473,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state","File Discussion");
+//							frm.set_value("doc_state","File Discussion");
+							frm.set_value("file_discussion_state","Completed");
 							// frm.refresh_field("file_discussion")
 							frm.refresh();
 							frm.save("Update");
@@ -445,7 +500,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+//					#frm.set_value("doc_state", r.message);
+frm.set_value("file_discussion_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -466,7 +522,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-								frm.set_value("doc_state","Documents received");
+//								frm.set_value("doc_state","Documents received");
+								frm.set_value("documents_received_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -491,7 +548,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+//					frm.set_value("doc_state", r.message);
+					frm.set_value("documents_received_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -510,7 +568,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state","Our Queries Given");
+//							frm.set_value("doc_state","Our Queries Given");
+							frm.set_value("our_queries_given_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -535,7 +594,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+//					frm.set_value("doc_state", r.message);
+					frm.set_value("our_queries_given_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -555,7 +615,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state","Queries Received");
+//							frm.set_value("doc_state","Queries Received");
+							frm.set_value("queries_received_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -580,7 +641,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("queries_received_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -599,7 +661,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state", "Assessment");
+//							frm.set_value("doc_state", "Assessment");
+							frm.set_value("assessment_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -624,7 +687,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("assessment_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -643,7 +707,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state", "Login");
+//							frm.set_value("doc_state", "Login");
+							frm.set_value("login_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -668,7 +733,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("login_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -688,7 +754,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state", "Bank Login Queries");
+//							frm.set_value("doc_state", "Bank Login Queries");
+							frm.set_value("bank_login_queries_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -713,7 +780,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("bank_login_queries_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -733,7 +801,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state", "Login Completion");
+//							frm.set_value("doc_state", "Login Completion");
+							frm.set_value("login_completion_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -758,7 +827,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("login_completion_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -778,7 +848,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state", "Credit Queries");
+//							frm.set_value("doc_state", "Credit Queries");
+							frm.set_value("credit_queries_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -803,7 +874,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("credit_queries_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -822,7 +894,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state","Sanction");
+//							frm.set_value("doc_state","Sanction");
+							frm.set_value("sanction_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -847,7 +920,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("sanction_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -867,7 +941,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state", "Technical Assessment");
+//							frm.set_value("doc_state", "Technical Assessment");
+							frm.set_value("technical_assessment_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -892,7 +967,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("technical_assessment_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -911,7 +987,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state", "Legel Assessment");
+//							frm.set_value("doc_state", "Legel Assessment");
+							frm.set_value("legel_assessment_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -936,7 +1013,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("legel_assessment_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -955,7 +1033,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state", "Ops");
+//							frm.set_value("doc_state", "Ops");
+							frm.set_value("ops_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -980,7 +1059,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("ops_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -999,7 +1079,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state", "Docket");
+//							frm.set_value("doc_state", "Docket");
+							frm.set_value("docket_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -1024,7 +1105,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("docket_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -1044,7 +1126,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state", "Disbursement");
+//							frm.set_value("doc_state", "Disbursement");
+							frm.set_value("disbursement_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -1069,7 +1152,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("disbursement_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
@@ -1089,7 +1173,8 @@ frappe.ui.form.on('Custom Crm', {
 						doc:frm.doc,
 						callback: function(r){
 							if(r.message){
-							frm.set_value("doc_state", "Cheques Handover");
+//							frm.set_value("doc_state", "Cheques Handover");
+							frm.set_value("cheques_handover_state","Completed");
 							frm.refresh();
 							frm.save("Update");
 							}
@@ -1114,7 +1199,8 @@ frappe.ui.form.on('Custom Crm', {
 				doc:frm.doc,
 				callback: function(r){
 					if(r.message){
-					frm.set_value("doc_state", r.message);
+					//frm.set_value("doc_state", r.message);
+frm.set_value("cheques_handover_state", "Pending");
 					frm.refresh();
 					frm.save("Update");
 					}
