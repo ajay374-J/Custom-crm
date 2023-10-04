@@ -77,6 +77,8 @@ frappe.ui.form.on('Custom Crm', {
 		}
 	},
 	refresh: function(frm) {
+	            document.querySelectorAll("[data-fieldname='status']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='doc_state']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.width = "150px";
                 document.querySelectorAll("[data-fieldname='submit']")[1].style.cssText += 'height:21px';
