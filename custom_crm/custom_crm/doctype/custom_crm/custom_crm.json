@@ -27,6 +27,7 @@
   "commission_due",
   "state",
   "status",
+  "doc_state",
   "status_history",
   "amended_from",
   "column_break_fvhlj",
@@ -151,6 +152,7 @@
   },
   {
    "allow_on_submit": 1,
+   "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -543,12 +545,22 @@
    "fieldname": "revert15",
    "fieldtype": "Button",
    "label": "Revert"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Draft",
+   "fieldname": "doc_state",
+   "fieldtype": "Select",
+   "label": "State",
+   "no_copy": 1,
+   "options": "Draft\nFile Discussion\nDocuments Received\nOur Queries Given\nQueries Received\nAssessment\nLogin\nBank Login Queries\nLogin Completion\nCredit Queries\nSanction\nTechnical Assessment\nLegel Assessment\nOps\nDocket\nDisbursement\nCheques Handover\nCompletion",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-04 21:47:33.956146",
+ "modified": "2023-10-04 23:19:59.667683",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",
