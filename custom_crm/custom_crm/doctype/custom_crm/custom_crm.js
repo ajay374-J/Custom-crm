@@ -100,95 +100,95 @@ frappe.ui.form.on('Custom Crm', {
 
 	            document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert']")[1].style.cssText += 'height:23px';
 
                 document.querySelectorAll("[data-fieldname='documents_received']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='documents_received']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit1']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert1']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit1']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert1']")[1].style.cssText += 'height:23px';
 
                 document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit2']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert2']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit2']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert2']")[1].style.cssText += 'height:23px';
 
                 document.querySelectorAll("[data-fieldname='queries_received']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='queries_received']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit3']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert3']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit3']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert3']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='assessment']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='assessment']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit4']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert4']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit4']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert4']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='login']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='login']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit5']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert5']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit5']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert5']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit6']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert6']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit6']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert6']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='login_completion']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='login_completion']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit7']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert7']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit7']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert7']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit8']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert8']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit8']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert8']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='sanction']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='sanction']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit9']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert9']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit9']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert9']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit10']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert10']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit10']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert10']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit11']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert11']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit11']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert11']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='ops']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='ops']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit12']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert12']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit12']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert12']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='docket']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='docket']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit13']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert13']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit13']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert13']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='disbursement']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='disbursement']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit14']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert14']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit14']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert14']")[1].style.cssText += 'height:23px';
 
 
                 document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.marginLeft = "75px";
                 document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.width = "150px";
-                document.querySelectorAll("[data-fieldname='submit15']")[1].style.cssText += 'height:22px';
-		        document.querySelectorAll("[data-fieldname='revert15']")[1].style.cssText += 'height:22px';
+                document.querySelectorAll("[data-fieldname='submit15']")[1].style.cssText += 'height:23px';
+		        document.querySelectorAll("[data-fieldname='revert15']")[1].style.cssText += 'height:23px';
 
 
         if (!frm.doc.__islocal) {
@@ -208,6 +208,7 @@ frappe.ui.form.on('Custom Crm', {
                 frm.toggle_display(['revert'], false);
 				frm.toggle_display(['submit'], true);
                 document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.backgroundColor = "white";
+                document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.paddingTop = "2px";
 
             }
 
@@ -223,6 +224,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert1'], false);
 		frm.toggle_display(['submit1'], true);
 		document.querySelectorAll("[data-fieldname='documents_received']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='documents_received']")[0].style.paddingTop = "2px";
+
 		}
 
 		var our_queries_given = frm.doc.our_queries_given;
@@ -237,6 +240,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert2'], false);
 		frm.toggle_display(['submit2'], true);
 		document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='our_queries_given']")[0].style.paddingTop = "2px";
+
 		}
 		var queries_received = frm.doc.queries_received;
 		if (queries_received) {
@@ -250,6 +255,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert3'], false);
 		frm.toggle_display(['submit3'], true);
 		document.querySelectorAll("[data-fieldname='queries_received']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='queries_received']")[0].style.paddingTop = "2px";
+
 		}
 		var assessment = frm.doc.assessment;
 		if (assessment) {
@@ -263,6 +270,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert4'], false);
 		frm.toggle_display(['submit4'], true);
 		document.querySelectorAll("[data-fieldname='assessment']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='assessment']")[0].style.paddingTop = "2px";
+
 
 		}
 		var login = frm.doc.login;
@@ -277,6 +286,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert5'], false);
 		frm.toggle_display(['submit5'], true);
 		document.querySelectorAll("[data-fieldname='login']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='login']")[0].style.paddingTop = "2px";
+
 
 		}
 		var bank_login_queries = frm.doc.bank_login_queries;
@@ -291,6 +302,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert6'], false);
 		frm.toggle_display(['submit6'], true);
 		document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='bank_login_queries']")[0].style.paddingTop = "2px";
+
 
 
 		}
@@ -306,6 +319,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert7'], false);
 		frm.toggle_display(['submit7'], true);
 		document.querySelectorAll("[data-fieldname='login_completion']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='login_completion']")[0].style.paddingTop = "2px";
+
 
 		}
 		var credit_queries = frm.doc.credit_queries;
@@ -320,6 +335,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert8'], false);
 		frm.toggle_display(['submit8'], true);
 		document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='credit_queries']")[0].style.paddingTop = "2px";
+
 
 		}
 		var sanction = frm.doc.sanction;
@@ -334,6 +351,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert9'], false);
 		frm.toggle_display(['submit9'], true);
 		document.querySelectorAll("[data-fieldname='sanction']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='sanction']")[0].style.paddingTop = "2px";
+
 
 		}
 		var technical_assessment = frm.doc.technical_assessment;
@@ -348,6 +367,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert10'], false);
 		frm.toggle_display(['submit10'], true);
 		document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='technical_assessment']")[0].style.paddingTop = "2px";
+
 
 		}
 		var legel_assessment = frm.doc.legel_assessment;
@@ -362,6 +383,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert11'], false);
 		frm.toggle_display(['submit11'], true);
 		document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='legel_assessment']")[0].style.paddingTop = "2px";
+
 
 		}
 		var ops = frm.doc.ops;
@@ -376,6 +399,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert12'], false);
 		frm.toggle_display(['submit12'], true);
 		document.querySelectorAll("[data-fieldname='ops']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='ops']")[0].style.paddingTop = "2px";
+
 
 		}
 		var docket = frm.doc.docket;
@@ -390,6 +415,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert13'], false);
 		frm.toggle_display(['submit13'], true);
 		document.querySelectorAll("[data-fieldname='docket']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='docket']")[0].style.paddingTop = "2px";
+
 
 		}
 		var disbursement = frm.doc.disbursement;
@@ -404,6 +431,8 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert14'], false);
 		frm.toggle_display(['submit14'], true);
 		document.querySelectorAll("[data-fieldname='disbursement']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='disbursement']")[0].style.paddingTop = "2px";
+
 
 		}
 		var cheques_handover = frm.doc.cheques_handover;
@@ -418,6 +447,7 @@ frappe.ui.form.on('Custom Crm', {
 		frm.toggle_display(['revert15'], false);
 		frm.toggle_display(['submit15'], true);
 		document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.backgroundColor ="white";
+        document.querySelectorAll("[data-fieldname='cheques_handover']")[0].style.paddingTop = "2px";
 
 		}
 			
