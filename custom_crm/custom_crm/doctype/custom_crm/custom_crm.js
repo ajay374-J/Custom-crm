@@ -134,8 +134,6 @@ frappe.ui.form.on('Custom Crm', {
 		}
 	            document.querySelectorAll("[data-fieldname='status']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='doc_state']")[0].style.display = "none";
-	            document.querySelectorAll("[data-label='Cancel']")[0].style.display = "none";
-
 	            document.querySelectorAll("[data-fieldname='file_completed']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='file_vendor_is_submittable']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='file_is_submittable']")[0].style.display = "none";
