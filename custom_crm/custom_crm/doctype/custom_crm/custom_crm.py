@@ -91,6 +91,11 @@ class CustomCrm(Document):
 				self.commission_due_to_give = commission_to_be_given - commission_already_given
 				commission_due_to_give = commission_to_be_given - commission_already_given
 				self.db_set("commission_due_to_give", commission_due_to_give, update_modified=True)
+		if self.commission_due_to_give ==0:
+			self.db_set("file_vendor_is_submittable", 1, update_modified=False)
+		else:
+			self.db_set("file_vendor_is_submittable", 0, update_modified=False)
+
 
 
 	@frappe.whitelist()
@@ -720,7 +725,12 @@ class CustomCrm(Document):
 			if db==1:
 				frappe.throw('Please contact administrator for completion of file.')
 			else:
-				frappe.throw('Commission due and commission due to give must be 0.')
+				frappe.throw('Commission Due must be 0.')
+		if self.file_vendor_is_submittable!=1:
+			if db==1:
+				frappe.throw('Please contact administrator for completion of file.')
+			else:
+				frappe.throw('Vendor Commission due to give must be 0.')
 					
 		status="Draft"
 		if self.file_completed==0:
