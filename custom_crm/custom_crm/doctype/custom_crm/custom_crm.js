@@ -82,10 +82,11 @@ frappe.ui.form.on('Custom Crm', {
                     frm.fields_dict['revert15'].$wrapper.hide();
 	    }
 	    else {
-		if(frm.doc.docstatus==1){
+			if(frm.doc.docstatus==1){
 	    	frm.fields.forEach(function(field) {
                         frm.set_df_property(field.df.fieldname, 'read_only', 0);
                     });
+				}
 	                frm.fields_dict['submit'].$wrapper.show();
                     frm.fields_dict['revert'].$wrapper.show();
                     frm.fields_dict['submit1'].$wrapper.show();
@@ -118,7 +119,7 @@ frappe.ui.form.on('Custom Crm', {
                     frm.fields_dict['revert14'].$wrapper.show();
                     frm.fields_dict['submit15'].$wrapper.show();
                     frm.fields_dict['revert15'].$wrapper.show();
-	    }
+	    
 	}
 		if(frm.doc.docstatus==1){
 			frappe.model.get_value("User Company", {"user":frappe.session.user}, "read_only_crm_field_for_user", function(value) {
@@ -126,7 +127,7 @@ frappe.ui.form.on('Custom Crm', {
 					frm.fields.forEach(function(field) {
                         frm.set_df_property(field.df.fieldname, 'read_only', 1);
                     });
-
+					
 				}
 			})
 
