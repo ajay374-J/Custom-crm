@@ -712,7 +712,7 @@ class CustomCrm(Document):
 		db=frappe.db.get_value("User Company", {"user":frappe.session.user}, "read_only_crm_field_for_user")
 		if self.commission_due>0 and self.commission_due_to_give>0:
 			if db==1:
-				frappe.throw('Commission due and commission due to give must be 0.')
+				frappe.throw('Please contact administrator for completion of file.')
 			else:
 				frappe.throw('Commission due and commission due to give must be 0.')
 					
