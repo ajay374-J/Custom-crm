@@ -159,19 +159,19 @@
    "allow_on_submit": 1,
    "fieldname": "commission_to_be_given",
    "fieldtype": "Float",
-   "label": "Commission to be given"
+   "label": "Vendor Commission to be given"
   },
   {
    "allow_on_submit": 1,
    "fieldname": "commission_already_given",
    "fieldtype": "Float",
-   "label": "Commission already given"
+   "label": "Vendor Commission already given"
   },
   {
    "allow_on_submit": 1,
    "fieldname": "commission_due_to_give",
    "fieldtype": "Float",
-   "label": "Commission due to give",
+   "label": "Vendor Commission due to give",
    "read_only": 1
   },
   {
@@ -242,7 +242,7 @@
    "in_standard_filter": 1,
    "label": "Status",
    "no_copy": 1,
-   "options": "Draft\nFile Discussion\nDocuments Received\nOur Queries Given\nQueries Received\nAssessment\nLogin\nBank Login Queries\nLogin Completion\nCredit Queries\nSanction\nTechnical Assessment\nLegel Assessment\nOps\nDocket\nDisbursement\nCheques Handover\nCompletion",
+   "options": "Draft\nFile Discussion\nDocuments Received\nOur Queries Given\nQueries Received\nAssessment\nLogin\nBank Login Queries\nLogin Completion\nCredit Queries\nSanction\nTechnical Assessment\nLegel Assessment\nOps\nDocket\nDisbursement\nCheques Handover\nCompletion\nCompleted",
    "print_hide": 1,
    "read_only": 1,
    "report_hide": 1
@@ -720,7 +720,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-05 01:07:07.791998",
+ "modified": "2023-10-05 14:00:12.533080",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",

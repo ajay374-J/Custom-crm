@@ -38,15 +38,6 @@ frappe.ui.form.on('Custom Crm', {
 
 				}
 			})
-			// frappe.call({
-			// 	method: "stages",
-			// 	doc:frm.doc,
-			// 	callback: function(r){
-			// 		frm.refresh_field("state")
-			// 		// me.frm.reload_doc();
-	
-			// 	}
-			// })
 		}
 		if(frm.doc.docstatus==1){
 			frappe.model.get_value("User Company", {"user":frappe.session.user}, "read_only_crm_field_for_user", function(value) {
@@ -77,6 +68,79 @@ frappe.ui.form.on('Custom Crm', {
 		}
 	},
 	refresh: function(frm) {
+	    if (frm.doc.status == 'Completed') {
+	    frm.fields.forEach(function(field) {
+                        frm.set_df_property(field.df.fieldname, 'read_only', 1);
+                    });
+
+                    // Hide submit/revert buttons
+                    frm.fields_dict['submit'].$wrapper.hide();
+                    frm.fields_dict['revert'].$wrapper.hide();
+                    frm.fields_dict['submit1'].$wrapper.hide();
+                    frm.fields_dict['revert1'].$wrapper.hide();
+                    frm.fields_dict['submit2'].$wrapper.hide();
+                    frm.fields_dict['revert2'].$wrapper.hide();
+                    frm.fields_dict['submit3'].$wrapper.hide();
+                    frm.fields_dict['revert3'].$wrapper.hide();
+                    frm.fields_dict['submit4'].$wrapper.hide();
+                    frm.fields_dict['revert4'].$wrapper.hide();
+                    frm.fields_dict['submit5'].$wrapper.hide();
+                    frm.fields_dict['revert5'].$wrapper.hide();
+                    frm.fields_dict['submit6'].$wrapper.hide();
+                    frm.fields_dict['revert6'].$wrapper.hide();
+                    frm.fields_dict['submit7'].$wrapper.hide();
+                    frm.fields_dict['revert7'].$wrapper.hide();
+                    frm.fields_dict['submit8'].$wrapper.hide();
+                    frm.fields_dict['revert8'].$wrapper.hide();
+                    frm.fields_dict['submit9'].$wrapper.hide();
+                    frm.fields_dict['revert9'].$wrapper.hide();
+                    frm.fields_dict['submit10'].$wrapper.hide();
+                    frm.fields_dict['revert10'].$wrapper.hide();
+                    frm.fields_dict['submit11'].$wrapper.hide();
+                    frm.fields_dict['revert11'].$wrapper.hide();
+                    frm.fields_dict['submit12'].$wrapper.hide();
+                    frm.fields_dict['revert12'].$wrapper.hide();
+                    frm.fields_dict['submit13'].$wrapper.hide();
+                    frm.fields_dict['revert13'].$wrapper.hide();
+                    frm.fields_dict['submit14'].$wrapper.hide();
+                    frm.fields_dict['revert14'].$wrapper.hide();
+                    frm.fields_dict['submit15'].$wrapper.hide();
+                    frm.fields_dict['revert15'].$wrapper.hide();
+	    }
+	    else {
+	    frm.fields_dict['submit'].$wrapper.show();
+                    frm.fields_dict['revert'].$wrapper.show();
+                    frm.fields_dict['submit1'].$wrapper.show();
+                    frm.fields_dict['revert1'].$wrapper.show();
+                    frm.fields_dict['submit2'].$wrapper.show();
+                    frm.fields_dict['revert2'].$wrapper.show();
+                    frm.fields_dict['submit3'].$wrapper.show();
+                    frm.fields_dict['revert3'].$wrapper.show();
+                    frm.fields_dict['submit4'].$wrapper.show();
+                    frm.fields_dict['revert4'].$wrapper.show();
+                    frm.fields_dict['submit5'].$wrapper.show();
+                    frm.fields_dict['revert5'].$wrapper.show();
+                    frm.fields_dict['submit6'].$wrapper.show();
+                    frm.fields_dict['revert6'].$wrapper.show();
+                    frm.fields_dict['submit7'].$wrapper.show();
+                    frm.fields_dict['revert7'].$wrapper.show();
+                    frm.fields_dict['submit8'].$wrapper.show();
+                    frm.fields_dict['revert8'].$wrapper.show();
+                    frm.fields_dict['submit9'].$wrapper.show();
+                    frm.fields_dict['revert9'].$wrapper.show();
+                    frm.fields_dict['submit10'].$wrapper.show();
+                    frm.fields_dict['revert10'].$wrapper.show();
+                    frm.fields_dict['submit11'].$wrapper.show();
+                    frm.fields_dict['revert11'].$wrapper.show();
+                    frm.fields_dict['submit12'].$wrapper.show();
+                    frm.fields_dict['revert12'].$wrapper.show();
+                    frm.fields_dict['submit13'].$wrapper.show();
+                    frm.fields_dict['revert13'].$wrapper.show();
+                    frm.fields_dict['submit14'].$wrapper.show();
+                    frm.fields_dict['revert14'].$wrapper.show();
+                    frm.fields_dict['submit15'].$wrapper.show();
+                    frm.fields_dict['revert15'].$wrapper.show();
+	    }
 	            document.querySelectorAll("[data-fieldname='status']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='doc_state']")[0].style.display = "none";
 
@@ -1263,4 +1327,21 @@ frappe.ui.form.on('Custom Crm', {
 });
 
 
-	
+frappe.ui.form.on('Custom Crm', {
+    refresh: function(frm) {
+        frm.add_custom_button(__('Mark as Completed'), function() {
+            frappe.confirm(__('Are you sure you want to mark this as completed?'), function() {
+                // Perform validations
+                if (frm.doc.commission_due === 0 && frm.doc.commission_due_to_give === 0) {
+                    // Change status to Completed
+                    frm.set_value('status', 'Completed');
+                    frm.refresh();
+                    frm.save("Update");
+
+                } else {
+                    frappe.msgprint(__('Commission due and commission due to give must be 0.'));
+                }
+            });
+        });
+    }
+});
