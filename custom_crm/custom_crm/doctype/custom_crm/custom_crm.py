@@ -66,6 +66,12 @@ class CustomCrm(Document):
 				self.commission_due = commission - commission_received
 				commission_due = commission - commission_received
 				self.db_set("commission_due", commission_due, update_modified=True)
+		if self.commission_due ==0:
+			self.db_set("file_is_submittable", 1, update_modified=False)
+		else:
+			self.db_set("file_is_submittable", 0, update_modified=False)
+
+
 
 	def calculate_vendor_commission_due(self):
 		commission_already_given = self.commission_already_given or 0
@@ -710,7 +716,7 @@ class CustomCrm(Document):
 	@frappe.whitelist()
 	def submit_completion_document(self):
 		db=frappe.db.get_value("User Company", {"user":frappe.session.user}, "read_only_crm_field_for_user")
-		if self.commission_due>0:
+		if self.file_is_submittable!=1:
 			if db==1:
 				frappe.throw('Please contact administrator for completion of file.')
 			else:

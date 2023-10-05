@@ -97,7 +97,8 @@
   "disbursement_state",
   "cheques_handover_state",
   "file_completed",
-  "file_completed_state"
+  "file_completed_state",
+  "file_is_submittable"
  ],
  "fields": [
   {
@@ -732,12 +733,18 @@
    "fieldtype": "Select",
    "label": "Completion of File",
    "options": "Pending\nCompleted"
+  },
+  {
+   "default": "0",
+   "fieldname": "file_is_submittable",
+   "fieldtype": "Check",
+   "label": "file_is_submittable"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-05 16:35:52.532819",
+ "modified": "2023-10-06 00:13:07.247301",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",
