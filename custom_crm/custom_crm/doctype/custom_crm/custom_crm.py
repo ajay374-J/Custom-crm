@@ -349,7 +349,7 @@ class CustomCrm(Document):
 			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 			self.db_set("assessment",1)
 			for j in self.state:
-				if j.state=="Queries Received":
+				if j.state=="Assessment":
 					j.db_set("check",1)
 				if j.check==1:
 					status=j.state
@@ -362,7 +362,7 @@ class CustomCrm(Document):
 		if self.assessment==1:
 			self.db_set("assessment",0)
 			for j in self.state:
-				if j.state=="Queries Received":
+				if j.state=="Assessment":
 					j.db_set("check",0)
 				if j.check==1:
 					status=j.state
