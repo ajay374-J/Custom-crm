@@ -95,7 +95,9 @@
   "ops_state",
   "docket_state",
   "disbursement_state",
-  "cheques_handover_state"
+  "cheques_handover_state",
+  "file_completed",
+  "file_completed_state"
  ],
  "fields": [
   {
@@ -254,7 +256,7 @@
    "fieldtype": "Select",
    "label": "State",
    "no_copy": 1,
-   "options": "Draft\nFile Discussion\nDocuments Received\nOur Queries Given\nQueries Received\nAssessment\nLogin\nBank Login Queries\nLogin Completion\nCredit Queries\nSanction\nTechnical Assessment\nLegel Assessment\nOps\nDocket\nDisbursement\nCheques Handover\nCompletion",
+   "options": "Draft\nFile Discussion\nDocuments Received\nOur Queries Given\nQueries Received\nAssessment\nLogin\nBank Login Queries\nLogin Completion\nCredit Queries\nSanction\nTechnical Assessment\nLegel Assessment\nOps\nDocket\nDisbursement\nCheques Handover\nCompletion\nCompleted",
    "read_only": 1
   },
   {
@@ -715,12 +717,27 @@
    "label": "Cheques Handover",
    "options": "Pending\nCompleted",
    "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "file_completed",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "File Completed"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "file_completed_state",
+   "fieldtype": "Select",
+   "label": "Completion of File",
+   "options": "Pending\nCompleted"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-05 14:00:12.533080",
+ "modified": "2023-10-05 16:14:47.090334",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",
@@ -744,7 +761,7 @@
  "sort_order": "DESC",
  "states": [
   {
-   "color": "Orange",
+   "color": "Blue",
    "title": "File Discussion"
   },
   {
@@ -804,8 +821,12 @@
    "title": "Disbursement"
   },
   {
-   "color": "Green",
+   "color": "Blue",
    "title": "Cheques Handover"
+  },
+  {
+   "color": "Green",
+   "title": "Completed"
   }
  ],
  "track_changes": 1

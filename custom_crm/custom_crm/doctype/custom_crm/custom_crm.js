@@ -161,6 +161,7 @@ frappe.ui.form.on('Custom Crm', {
 	            document.querySelectorAll("[data-fieldname='docket_state']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='disbursement_state']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='cheques_handover_state']")[0].style.display = "none";
+	            document.querySelectorAll("[data-fieldname='file_completed_state']")[0].style.display = "none";
 
 
 	            document.querySelectorAll("[data-fieldname='file_discussion']")[0].style.marginLeft = "75px";
@@ -1335,9 +1336,44 @@ frappe.ui.form.on('Custom Crm', {
                 // Perform validations
                 if (frm.doc.commission_due === 0 && frm.doc.commission_due_to_give === 0) {
                     // Change status to Completed
-                    frm.set_value('status', 'Completed');
-                    frm.refresh();
-                    frm.save("Update");
+                    frappe.call({
+						method: "submit_completion_document",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+//							frm.set_value("doc_state", "Completed");
+							frm.set_value("file_completed_state","Completed");
+							frm.refresh();
+							frm.save("Update");
+							}
+
+						}
+					})
+
+
+                } else {
+                    frappe.msgprint(__('Commission due and commission due to give must be 0.'));
+                }
+            });
+        });
+        frm.add_custom_button(__('Go Back'), function() {
+            frappe.confirm(__('Are you sure you want to go back to draft'), function() {
+                // Perform validations
+                if (frm.doc.commission_due === 0 && frm.doc.commission_due_to_give === 0) {
+                    // Change status to Completed
+                    frappe.call({
+						method: "revert_completion_document",
+						doc:frm.doc,
+						callback: function(r){
+							if(r.message){
+//							frm.set_value("doc_state", "Completed");
+							frm.set_value("file_completed_state","Pending");
+							frm.refresh();
+							frm.save("Update");
+							}
+
+						}
+					})
 
 
                 } else {

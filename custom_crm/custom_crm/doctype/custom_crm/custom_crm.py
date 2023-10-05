@@ -229,6 +229,10 @@ class CustomCrm(Document):
 			"state":"Cheques Handover",
 
 		})
+		self.append("state",{
+			"state":"Completed",
+
+		})
 
 
 	@frappe.whitelist()
@@ -700,4 +704,31 @@ class CustomCrm(Document):
 				if j.check==1:
 					status=j.state
 					self.db_set("status",status)
+		return status
+
+
+	@frappe.whitelist()
+	def submit_completion_document(self):
+		status="Draft"
+		if self.file_completed==0:
+			self.db_set("file_completed",1)
+			for j in self.state:
+				if j.state=="Completed":
+					j.db_set("check",1)
+				if j.check==1:
+					status=j.state
+					self.db_set("status",status)
+		return status
+
+	@frappe.whitelist()
+	def revert_completion_document(self):
+		status = "Draft"
+		if self.file_completed == 1:
+			self.db_set("file_completed", 0)
+			for j in self.state:
+				if j.state == "Completed":
+					j.db_set("check", 0)
+				if j.check == 1:
+					status = j.state
+					self.db_set("status", status)
 		return status
