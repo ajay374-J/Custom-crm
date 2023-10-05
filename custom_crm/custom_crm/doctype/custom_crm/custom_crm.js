@@ -109,7 +109,10 @@ frappe.ui.form.on('Custom Crm', {
                     frm.fields_dict['revert15'].$wrapper.hide();
 	    }
 	    else {
-	    frm.fields_dict['submit'].$wrapper.show();
+	    frm.fields.forEach(function(field) {
+                        frm.set_df_property(field.df.fieldname, 'read_only', 0);
+                    });
+	                frm.fields_dict['submit'].$wrapper.show();
                     frm.fields_dict['revert'].$wrapper.show();
                     frm.fields_dict['submit1'].$wrapper.show();
                     frm.fields_dict['revert1'].$wrapper.show();
@@ -145,6 +148,7 @@ frappe.ui.form.on('Custom Crm', {
 	            document.querySelectorAll("[data-fieldname='status']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='doc_state']")[0].style.display = "none";
 
+	            document.querySelectorAll("[data-fieldname='file_completed']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='file_discussion_state']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='documents_received_state']")[0].style.display = "none";
 	            document.querySelectorAll("[data-fieldname='our_queries_given_state']")[0].style.display = "none";
