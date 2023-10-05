@@ -725,12 +725,12 @@ class CustomCrm(Document):
 			if db==1:
 				frappe.throw('Please contact administrator for completion of file.')
 			else:
-				frappe.throw('Commission Due must be 0.')
+				frappe.throw('Commission due must be 0.')
 		if self.file_vendor_is_submittable!=1:
 			if db==1:
 				frappe.throw('Please contact administrator for completion of file.')
 			else:
-				frappe.throw('Vendor Commission due to give must be 0.')
+				frappe.throw('Vendor commission due to give must be 0.')
 					
 		status="Draft"
 		if self.file_completed==0:

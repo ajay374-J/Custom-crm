@@ -163,19 +163,19 @@
    "allow_on_submit": 1,
    "fieldname": "commission_to_be_given",
    "fieldtype": "Float",
-   "label": "Vendor Commission to be given"
+   "label": "Vendor Commission Total"
   },
   {
    "allow_on_submit": 1,
    "fieldname": "commission_already_given",
    "fieldtype": "Float",
-   "label": "Vendor Commission already given"
+   "label": "Vendor Commission Given"
   },
   {
    "allow_on_submit": 1,
    "fieldname": "commission_due_to_give",
    "fieldtype": "Float",
-   "label": "Vendor Commission due to give",
+   "label": "Vendor Commission Due",
    "read_only": 1
   },
   {
@@ -751,7 +751,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-06 02:03:41.876928",
+ "modified": "2023-10-06 02:24:26.772370",
  "modified_by": "Administrator",
  "module": "custom_crm",
  "name": "Custom Crm",
