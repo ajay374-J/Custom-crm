@@ -709,6 +709,13 @@ class CustomCrm(Document):
 
 	@frappe.whitelist()
 	def submit_completion_document(self):
+		db=frappe.db.get_value("User Company", {"user":frappe.session.user}, "read_only_crm_field_for_user")
+		if self.commission_due>0 and self.commission_due_to_give>0:
+			if db==1:
+				frappe.throw('Commission due and commission due to give must be 0.')
+			else:
+				frappe.throw('Commission due and commission due to give must be 0.')
+					
 		status="Draft"
 		if self.file_completed==0:
 			self.db_set("file_completed",1)

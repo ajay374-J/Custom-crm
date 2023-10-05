@@ -1327,7 +1327,6 @@ frappe.ui.form.on('Custom Crm', {
         frm.add_custom_button(__('Mark as Completed'), function() {
             frappe.confirm(__('Are you sure you want to mark this as completed?'), function() {
                 // Perform validations
-                if (frm.doc.commission_due === 0 && frm.doc.commission_due_to_give === 0) {
                     // Change status to Completed
                     frappe.call({
 						method: "submit_completion_document",
@@ -1344,16 +1343,13 @@ frappe.ui.form.on('Custom Crm', {
 					})
 
 
-                } else {
-                    frappe.msgprint(__('Commission due and commission due to give must be 0.'));
-                }
+                
             });
         });
 	}else{
         frm.add_custom_button(__('Go Back'), function() {
             frappe.confirm(__('Are you sure you want to go back to draft'), function() {
                 // Perform validations
-                if (frm.doc.commission_due === 0 && frm.doc.commission_due_to_give === 0) {
                     // Change status to Completed
                     frappe.call({
 						method: "revert_completion_document",
@@ -1370,9 +1366,7 @@ frappe.ui.form.on('Custom Crm', {
 					})
 
 
-                } else {
-                    frappe.msgprint(__('Commission due and commission due to give must be 0.'));
-                }
+          
             });
         });
     }
