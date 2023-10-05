@@ -69,6 +69,7 @@ frappe.ui.form.on('Custom Crm', {
 	},
 	refresh: function(frm) {
 	    if (frm.doc.status == 'Completed') {
+
 	    frm.fields.forEach(function(field) {
                         frm.set_df_property(field.df.fieldname, 'read_only', 1);
                     });
@@ -1337,6 +1338,7 @@ frappe.ui.form.on('Custom Crm', {
                     frm.set_value('status', 'Completed');
                     frm.refresh();
                     frm.save("Update");
+
 
                 } else {
                     frappe.msgprint(__('Commission due and commission due to give must be 0.'));
