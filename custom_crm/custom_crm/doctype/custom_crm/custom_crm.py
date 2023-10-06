@@ -753,5 +753,5 @@ class CustomCrm(Document):
 					j.db_set("check", 0)
 				if j.check == 1:
 					status = j.state
-					self.db_set("status", status)
+		self.db_set("status", status)
 		return status
