@@ -85,8 +85,26 @@ frappe.ui.form.on('Custom Crm', {
 			if(frm.doc.docstatus==1){
 	    	frm.fields.forEach(function(field) {
                         frm.set_df_property(field.df.fieldname, 'read_only', 0);
+
                     });
 				}
+			        frm.set_df_property("file_discussion", "read_only", 1);
+			        frm.set_df_property("documents_received", "read_only", 1);
+                     frm.set_df_property("our_queries_given", "read_only", 1);
+                     frm.set_df_property("queries_received", "read_only", 1);
+                     frm.set_df_property("assessment", "read_only", 1);
+                     frm.set_df_property("login", "read_only", 1);
+                     frm.set_df_property("bank_login_queries", "read_only", 1);
+                     frm.set_df_property("credit_queries", "read_only", 1);
+                     frm.set_df_property("login_completion", "read_only", 1);
+                     frm.set_df_property("sanction", "read_only", 1);
+                     frm.set_df_property("technical_assessment", "read_only", 1);
+                     frm.set_df_property("legel_assessment", "read_only", 1);
+                     frm.set_df_property("ops", "read_only", 1);
+                     frm.set_df_property("docket", "read_only", 1);
+                     frm.set_df_property("disbursement", "read_only", 1);
+                     frm.set_df_property("cheques_handover", "read_only", 1);
+
 	                frm.fields_dict['submit'].$wrapper.show();
                     frm.fields_dict['revert'].$wrapper.show();
                     frm.fields_dict['submit1'].$wrapper.show();
