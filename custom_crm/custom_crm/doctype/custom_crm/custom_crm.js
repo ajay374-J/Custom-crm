@@ -1325,6 +1325,7 @@ frappe.ui.form.on('Custom Crm', {
     refresh: function(frm) {
 		if(frm.doc.docstatus==1){
 		if(frm.doc.status!="Completed"){
+			if(frm.doc.status!="Draft"){
         frm.add_custom_button(__('Mark as Completed'), function() {
             frappe.confirm(__('Are you sure you want to mark this as completed?'), function() {
                 // Perform validations
@@ -1346,7 +1347,7 @@ frappe.ui.form.on('Custom Crm', {
 
                 
             });
-        });
+        });}
 	}else{
         frm.add_custom_button(__('Go Back'), function() {
             frappe.confirm(__('Are you sure you want to go back to draft'), function() {
