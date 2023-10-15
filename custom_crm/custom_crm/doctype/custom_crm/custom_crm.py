@@ -4,6 +4,8 @@
 import frappe
 from frappe.model.document import Document
 
+
+
 class CustomCrm(Document):
 	def get_feed(self):
 		return "{0}".format(frappe._(self.status))
@@ -250,7 +252,7 @@ class CustomCrm(Document):
 	def submit_file_discussion(self):
 		status="Draft"
 		if self.file_discussion==0:
-			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			# print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 			self.db_set("file_discussion",1)
 			for j in self.state:
 				if j.state=="File Discussion":
@@ -276,7 +278,7 @@ class CustomCrm(Document):
 	def submit_documents_received(self):
 		status="Draft"
 		if self.documents_received==0:
-			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			# print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 			self.db_set("documents_received",1)
 			for j in self.state:
 				if j.state=="Documents Received":
@@ -305,7 +307,7 @@ class CustomCrm(Document):
 	def submit_our_queries_given(self):
 		status="Draft"
 		if self.our_queries_given==0:
-			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			# print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 			self.db_set("our_queries_given",1)
 			for j in self.state:
 				if j.state=="Our Queries Given":
@@ -333,7 +335,7 @@ class CustomCrm(Document):
 	def submit_queries_received(self):
 		status="Draft"
 		if self.queries_received==0:
-			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			# print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 			self.db_set("queries_received",1)
 			for j in self.state:
 				if j.state=="Queries Received":
@@ -361,7 +363,7 @@ class CustomCrm(Document):
 	def submit_assessment(self):
 		status="Draft"
 		if self.assessment==0:
-			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			# print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 			self.db_set("assessment",1)
 			for j in self.state:
 				if j.state=="Assessment":
@@ -390,7 +392,7 @@ class CustomCrm(Document):
 	def submit_login(self):
 		status="Draft"
 		if self.login==0:
-			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			# print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 			self.db_set("login",1)
 			for j in self.state:
 				if j.state=="Login":
@@ -420,7 +422,7 @@ class CustomCrm(Document):
 	def submit_bank_login_queries(self):
 		status="Draft"
 		if self.bank_login_queries==0:
-			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			# print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 			self.db_set("bank_login_queries",1)
 			for j in self.state:
 				if j.state=="Bank Login Queries":
@@ -448,7 +450,7 @@ class CustomCrm(Document):
 	def submit_credit_queries(self):
 		status="Draft"
 		if self.credit_queries==0:
-			print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+			# print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 			self.db_set("credit_queries",1)
 			for j in self.state:
 				if j.state=="Credit Queries":
